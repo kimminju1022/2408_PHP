@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    <form> 태그 : 정보를 제출하기 위해 범위를 지정하는 역할
+    <lavel> 태그 : 입력받는 필드을 설명할 때 사용
+        <lavel> 태그 하위에 <input> 태그를 위치시킬 수 있고
+        id와 for 속성을 사용해 <input> 태그와 연결
+
+    <input> 태그 : 데이터를 입력받을 수 있는 태그
+    -type => text : 글자를 받음
+            label : for자동 생성 이걸 사용해서 input에서 for값을 적용하여 연동된다
+            (추가설명 : 앞에 표출되는 id라는 글자만 눌러도 커서가 생김)
+            [<input type="text" id="id"> <input type="password" id="pw">
+            여기서 id는 고유 식별이기 때문에 id="값"을 쓴다]
+    type속성을 통하여 다양한 방법으로 데이터를 받을 수 있습니다
+    -text : 일반적인 텍스트를 입력할 수 있는 텍스트 박스를 넣는다
+    -password : 비밀번호를 입력할 수 있는 필드를 넣습니다
+    -search : 검색할 때 입력하는 필드를 넣습니다
+    -url : YRL주소를 입력할 수 있는 필드를 넣습니다
+    -email : 이메일을 입력할 수 있는 필드를 넣습니다
+    -checkbox : 여러개의 체크박스 항목 중 복수를 선택할 수 있다(name 속성값을 일치 시키면 하나의 그룹으로 인식)
+    -radio : 여러개의 라디오 항목 중 1개를 선택할 수 있다(name 속성값을 일치 시키면 하나의 그룹으로 인식)
+    -number : 숫자를 입력하기 위한 필드입니다 
+    -range : 슬라이드 막대를 움직여서 값을 입력받을 수 있습니다
+    -date :날자와 시간 데이터를 입력받을 수 있다(달력)
+    -submit : 품에서 입력한 정보를 서버로 전송합니다
+    -reset : <input>요소에 입력된 모든 정보를 리셋합니다
+    -button : 기능은 없고 오직 버튼 형태만 삽입합니다
+    -hidden : 화면의 퐁에는 보이지 않지만 사용자가 입력을 마치면 함께 서버로 전송
+
+    <> 태그 :
+    -
+
+    
+            -->
+
+    <form action="./04_2_listTag.html">
+        <fieldset>
+            <legend>로그인 정보</legend>
+            <label for="id">ID</label>
+            <input type="text" id="id" autofocus required maxlength="10" placeholder="소문자 10자 이하로 작성해 주세요">
+            <br>
+
+            <label for="pw">PW</label>
+            <input type="password" id="pw">
+        </fieldset>
+        <br>
+
+        <input type="number" min="0" max="10">
+        <br>
+
+        <!-- email -->
+        <label for="email">E-mail</label>
+        <input type="email" id="email">
+        <br><br>
+
+        <!-- readonly -->
+        <input type="text" value="읽기전용" readonly>
+        <br><br>
+
+        <!-- check box -->
+        <input type="checkbox" name="fruit" id="banana">
+        <label for="banana">바나나</label>
+        <input type="checkbox" name="fruit" id="apple" checked>
+        <label for="apple">사과</label>
+        <input type="checkbox" name="fruit" id="grape">
+        <label for="grape">포도</label>
+        <br><br>
+
+        <!-- radio -->
+        <input type="radio" name="foods" id="bulgogi" checked>
+        <label for="bulgogi">불고기</label>
+        <input type="radio" name="foods" id="hamberger">
+        <label for="hamberger">햄버거</label>
+        <input type="radio" name="foods" id="zzajang">
+        <label for="zzajang">짜장</label>
+        <br><br>
+
+        <!-- textarea 태그 -->
+        <textarea maxlength="50" cols="10" rows="3" placeholder="남길 말씀이 있다면 여기에"></textarea>
+        <br><br>
+
+        <!-- select, option 태그 -->
+        <select name="pocketmon">
+            <option value="0">피카츄</option>
+            <option value="1">라이츄</option>
+            <option value="2">꼬부기</option>
+        </select>
+
+        <br><br>
+        <!-- input 태그를 이용한 버튼생성 value=""여기에 원하는 단어를 넣으면 적용되어 송출 -->
+        <input type="submit">
+        <input type="reset">
+        <input type="button">
+        <br><br>
+        <!-- button 태그를 이용한 버튼생성 -->
+        <button type="submit">로그인</button>
+        <button type="reset">초기화</button>
+        <button type="button">버튼</button>
+
+    </form>
+</body>
+
+</html>
