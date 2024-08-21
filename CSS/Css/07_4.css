@@ -1,0 +1,22 @@
+.foods1{
+    /* 불릿없애기 */
+    list-style-type: none;
+    /* 숫자불릿 */
+    /* list-style-type: decimal; */
+    /* 영어불릿 */
+    /* list-style-type: lower-alpha; */
+
+}
+
+.foods2{
+    /* 목록 들여쓰기 */
+    /* list-style-position: inside; */
+    list-style-position: outside;
+}
+
+/* 이미지 불릿 */
+.foods3{
+list-style-image: url(../img/staricon.png);
+list-style-position: inside;
+
+}

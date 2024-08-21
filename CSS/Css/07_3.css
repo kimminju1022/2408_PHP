@@ -1,0 +1,82 @@
+/* 글자색 지정 
+현업에서는 16진법, RGB로 지정함
+*/
+
+.h2_color {
+    /* 색상명으로 지정
+    color: mediumaquamarine; */
+    /*  16진법(색상이 다채로움) #code로 표기됨
+    color: #775dd4;
+     */
+    /* RGB방식으로 색상 지정 
+     color: rgb(154, 205, 50);
+     */
+    /* RGBA 방식으로 색상지정 ↑거에 숫자를 임의로 추가함
+     a는 투명도를 뜻하며 0에 가까워 질 수 록 투명하며 1은 투명도 없음
+     color: rgb(238, 130, 238, 0.4);
+      */
+    /* HSLA 방식으로 색상지정 */
+    color: hsl(197, 96%, 44%);
+}
+
+/* 선으로 텍스트를 꾸미는 속성 */
+
+.td_none {
+    text-decoration: none;
+}
+
+.td_underline {
+    text-decoration: underline;
+}
+
+.td_through {
+    text-decoration: line-through;
+}
+
+/* 글자의 정렬 */
+.align_left {
+    text-align: left;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.align_center {
+    text-align: center;
+}
+
+.center {
+    background-color: rgba(214, 241, 241, 0.979);
+    height: 100px;
+    text-align: center;
+    line-height:100px;
+}
+
+/* en대소문자 변경 */
+.transform {
+    /* 첫글자를 대문자로 변환 */
+    /* text-transform: capitalize; */
+
+    /* 전부 대문자로 변환*/
+    /* text-transform: uppercase; */
+
+    /* 전부 소문자로 변환 */
+    text-transform: lowercase;
+}
+
+/* 자간 */
+.letter_spacing{
+    letter-spacing: 10px;
+}
+
+/* 단어간의 간격 */
+.word_spacing{
+word-spacing: 20px;
+}
+
+/* 그림자 효과 */
+.shadow{
+    /* 가로,세로위치 크기 색상 */
+    text-shadow: 5px 5px 5px #ff0000;
+}
