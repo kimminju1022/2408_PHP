@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
+/* 폰트변경 */
+body{
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ 
+
+/* 키워드로 폰트크기 조절 */
+.p_size_xx_small{
+    font-size: xx-small;
+}
+.p_size_medium{
+    font-size: medium;
+}
+
+.p_size_xx_large{
+font-size: xx-large;
+}
+
+/* px 단위로 고정된 pixcell값 */
+.p_size_px{
+font-size: 20px;
+}
+
+/* 
+em, rem 단위로 폰트크기 조절(비율 크기)
+em은 부모요소 기준
+rem은 최상위 요소 기준이다
+*/
+.p_size_em{
+font-size: 2em;
+}
+
+.p_size_rem{
+    font-size: 2rem;
+}
+
+/* 글자굵기 조절 */
+.p_weight_100{
+    font-weight: 100;
+}
+
+.p_weight_400{
+    font-weight: 400;
+}
+
+.p_weight_900{
+    font-weight: 900;
+}
+
+
