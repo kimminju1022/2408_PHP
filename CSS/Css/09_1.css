@@ -1,0 +1,17 @@
+/* 
+background-color : html 요소의 배경색을 지정
+background-clip : html 요소의 배경색 적용 범위를 지정
+**속성값
+>border-box : 테두리까지 적용
+>padding
+>content
+
+*/
+div{
+    background-color: cadetblue;
+    border: 10px dotted #cdf086;
+width: 150px;
+height: 150px;
+padding: 30px;
+background-clip: content-box;
+}

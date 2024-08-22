@@ -1,0 +1,67 @@
+main,
+div {
+    padding: 20px;
+
+}
+
+main {
+    background-color: aquamarine;
+    width: 250px;
+    height: 1000px;
+}
+
+/* 
+position 속성 : 
+            html 요소를 배치하는 방법을 지정합니다
+            **속성값
+            -static : 기본값으로 일반적인 문서으 흐름에 맞춰 배치합니다
+relative와 absolute차이
+>relative : static 위치에서 top right left와 같은 속성에 의한 상대적인 위치값을 지정
+            그 외에는 static과 같다
+>absolute : 요소가 문서의 일반적인 흐름을 따르지 않게 한다
+relative값을 사용한 상위 요소를 기준으로 위치값을 지정
+posittion : static속성을 가지고 있지 않은 부모를 기준으로 움직인다
+
+fixed
+sticky: 요소가 html 문서안에 static과 같이 일반적인 흐름에 따라가다가
+스크롤 위치가 임계점에 이르면 화면에 고정할 수 있는 속성
+top속성만 적용
+자신의 바로위의
+            */
+
+.div-static {
+    background-color: gray;
+    position: static;
+}
+
+/* 알기 */
+.div-relative {
+    background-color: aqua;
+    position: relative;
+    /* 요소의 위치를 변경할 수 있다  */
+    /* top:20px;
+    left: 20px; */
+}
+
+.div-relative-absolute {
+    background-color: antiquewhite;
+    position: relative;
+}
+
+.div-absolute {
+    background-color: blueviolet;
+    position: absolute;
+}
+
+.div-fixed {
+    background-color: cadetblue;
+    position: fixed;
+    right: 10vw;
+    bottom: 10vh;
+}
+
+.div-sticky {
+    background-color: lightsalmon;
+    position: sticky;
+    top: 0;
+}
