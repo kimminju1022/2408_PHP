@@ -1,0 +1,71 @@
+/* .nav_var {
+    width: 605px;
+    background-color: gray;
+}
+
+.nav_var ul {
+    list-style: none;
+}
+
+.nav_var ul li {
+    float: left;
+    width: 80px;
+    border: 1px solid #000;
+    text-align: center;
+    color: #000;
+}
+    /* padding: 10px; */
+
+/* 
+.nav_var ul li a{
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav_var ul li:hover{
+   background-color: #555;
+    color: #fff;
+}
+
+.nav_var ul li:nth-child(6) {
+    background-color: #b30000;
+    color: #fff;
+
+} */ 
+.nav_var {
+    width: 605px;
+    background-color: gray;
+}
+
+.nav_var ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav_var ul li {
+    float: left;
+    width: 80px;
+    border: 1px solid #000;
+    text-align: center;
+    background-color: gray; /* 기본 배경색 */
+}
+
+.nav_var ul li a {
+    display: block;
+    text-decoration: none;
+    color: black; /* 기본 글씨 색상 */
+    padding: 10px;
+}
+
+/* 1~5번째 li 요소에 대한 hover 효과 */
+.nav_var ul li:nth-child(-n+5):hover a {
+    background-color: #555;
+    color: #fff;
+}
+
+/* 6번째 li 요소에 대한 hover 효과 */
+.nav_var ul li:nth-child(6):hover a {
+    background-color: #b30000;
+    color: #fff;
+}
