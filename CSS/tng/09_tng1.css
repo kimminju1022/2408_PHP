@@ -1,0 +1,66 @@
+body {
+    background-color: #000;
+}
+
+head {
+    width: 500px;
+
+}
+h1 {
+    font-weight: bold;
+    color: #fff;
+    text-align: center;    /* 중앙 정렬 */
+    margin: 30px auto;    /* 바깥 여백 */
+    padding: 20px 40px 20px 40px;    /* 안쪽 여백 */
+    background-color: #02233b;
+}
+
+h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3{
+    font-weight: bold;
+    color: red;
+}
+
+/* img {
+    float: right;
+    clear: both;
+    width: 200px;
+    height: auto;
+ 배경으로 해결하면 간단해요 그땐 콘테이너 안에 넣어요 
+background-repeat: no-repeat;
+바둑반 모양으로 반복하지 안은 하나의 이미지
+background-position: right bottom;
+백그라운드의 위치 
+
+} */
+
+.container{
+    background-color: #fff ;
+    border: 1px dotted red;
+    width: 500px;
+    height: 650px;
+    margin: auto;    /* 중앙으로 배열됨 안주면 왼쪽으로 정열됨 */
+    padding: 30px 15px;
+    background-image: url(../img/pooh.webp) ;
+    background-size: 200px;
+    /* 백그라운드사이즈를 조절 */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    /* background-clip: content-box; */
+}
+
+.text_box{
+    /* 자신의 폰트사이즈에 기준한 배율 (배웠으니까 써먹어 보고싶어서;;) */
+    line-height: 30px;  /* 줄간격 */
+}
+
+.text_box p {
+margin-left: 60px;
+/* text-indent: 20px; 들여쓰기를 위해 사용 */
+/* 본 스타일은 text_box로 지정한 구역 내의 p태그 전체적용 방법 */
+}

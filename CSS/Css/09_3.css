@@ -1,0 +1,42 @@
+div{
+    width: 200px;
+    height: 150px;
+    border: 1px solid #000;
+    margin: 10px;
+}
+
+/* linear-gradient : 선형그라데이션 주는 방법 */
+.div1{
+background: linear-gradient(
+   0deg, blue, skyblue 80%, #fff
+);
+}
+/* 
+- **linear-gradient(white, blue);**
+흰>파랑의 그라데이션을 왼쪽에서 오른쪽로 적용합니다.
+- **linear-gradient(to bottom, white, blue);**
+흰>파랑의 그라데이션을 위에서 아래로 적용합니다.
+- **linear-gradient(45deg, white, blue);**
+흰>파랑의 그라데이션을 45도 방향으로 적용합니다.
+- **linear-gradient(to left, white, blue 50%, white);**
+흰>파>흰의 그라데이션을 오른쪽에서 왼쪽으로 적용합니다.
+이때 파랑색의 위치는 요소의 50%에 위치합니다. */
+
+/* radial-gradient : 원형 그라데이션을 주는 방법 */
+.div2{
+    background: radial-gradient(
+        circle at 80% 30%, blue, skyblue 
+    );
+}
+/* 
+- **radial-gradient(white, blue);**
+흰>파랑의 타원형 그라데이션을 적용합니다.
+- **radial-gradient(circle, white, blue);**
+흰>파랑의 원형 그라데이션을 위에서 아래로 적용합니다.
+- **radial-gradient(circle closest-corner, white, blue 50%);**
+흰>파랑의 원형 그라데이션의 크기를 설정해 적용합니다.
+- **radial-gradient(circle at 0% 20%, white, blue 50%, white);**
+흰>파>흰의 그라데이션을 왼쪽 위 꼭지점을 기준으로 0%, 20% 기준으로 적용합니다.
+이때 파랑색의 위치는 70%에 위치합니다.
+ */
+
