@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lan없애기g="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./10_tng2.css">
+</head>
+
+<body>
+    <div class="container">
+        <fieldset class="signUp">
+
+            <legend>I want You!</legend>
+            <!-- <legend> 태그는 <fieldset> 요소의 캡션(caption)을 정의할 때 사용 -->
+            <form action="">
+                <ul>
+                    <li>
+                        <label for="name">이름</label>
+                        <input type="text" id="name" autofocus required>
+                         <!-- <input> 태그의 required 속성은 폼 데이터(form data)가 서버로 제출되기 전 반드시 채워져 있어야 하는 입력 필드를 명시.-->
+
+ 
+
+required 속성이 제대로 동작하는 <input> 요소의 type 속성값은 다음과 같습니다.
+
+- checkbox, date, email, file, number, password, pickers, radio, search, tel, text, url
+
+ 
+
+required 속성은 불리언(boolean) 속성입니다.
+
+불리언 속성은 해당 속성을 명시하지 않으면 속성값이 자동으로 false 값을 가지게 되며, 명시하면 자동으로 true 값을 가지게 됩니다. -->
+                    </li>
+                    <br>
+
+                    <li>
+                        <label for="age">나이</label>
+                        <input type="number" min="20" id="age" required>
+                        <!-- 정수로 표기하기 위해 최소값을 적용 -->
+                    </li>
+                    <br>
+
+                    <li>
+                        <label for="gender" required>성별</label>
+                        <input type="radio" name="gender" id="male">
+                        <label for="male">남자</label>
+                        <input type="radio" name="gender" id="female" checked>
+                        <label for="female">여자</label>
+                        <!-- 여성으로 기본 적용. 배웠으니 써먹어 봄 -->
+                    </li>
+                    <br>
+
+                    <li>
+                        <label for="memo">요청사항</label>
+                        <textarea maxlength="500" cols="30" rows="5" placeholder="요청사항을 기재하세요"></textarea>
+
+
+                    </li>
+                    <br>
+                    <button id="send" type="send">보내기</button>
+                    <p>내용을 다시 한 번 확인해 주세요</p>
+                </ul>
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+
+
+<!-- 선생님 코드
+
+<fieldset class="signUp">
+
+    <legend>I want You!</legend>
+    <form action="">
+        <label for="name" class="label-required">이름</label>
+        <input type="text" name="name" id="name" autofocus required>
+        <br><br>
+        <label for="age" class="label-required">나이</label>
+        <input type="number" min="20" id="age" required>
+        <br><br>
+
+
+        <label for="gender" class="label-required">성별</label>
+        <input type="radio" class="radio-gender" name="gender" id="male" required>
+        <label for="male">남자</label>
+        <input type="radio" class="radio-gender" name="gender" id="female" checked>
+        <label for="female">여자</label>
+        <br><br>
+
+        <label for="memo">요청사항</label>
+        <textarea name="memo" id="memo" cols="30" rows="10" placeholder="요청사항을 기재하세요"></textarea>
+
+        <button type="submit" class="btn-send">보내기</button>
+        <p class="hide">내용을 다시 한 번 확인해 주세요</p>
+
+    </form> 반드시 폼태그를 해주어야 보냈을 때 검토함
+
+-->
+
+</html>

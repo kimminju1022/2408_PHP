@@ -14,7 +14,8 @@
 .nav_bar ul {
     list-style: none; /* 불릿 삭제 */
     padding: 0;
-    margin: 0;}
+    margin: 0;
+}
 
 .nav_bar ul li {
     float: left; /* 불릿이 있던 자리까지 땡겨져서 겹쳐보임 */

@@ -1,0 +1,116 @@
+label:not([type=radio]+label)::before {
+    color: red;
+    content: '*';
+}
+
+ul {
+    list-style: none;
+}
+
+fieldset {
+    background-image: url(../img/minions.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 500px;
+    height: 400px;
+}
+
+legend {
+    font-size: xx-large;
+    font-weight: bold;
+    color: hotpink;
+}
+
+label {
+    vertical-align: top;
+    /* 문제점 문구는 올릴 수 있었으나 불릿이 이동하지 못함 li에서 조정해 봤는데 잘 되지 않음 */
+}
+
+input,textarea {
+    background-color: transparent;
+    /* 입력박스 배경을 투명으로 주어 배경이 보이게 함 */
+    text-shadow: 1px 1px 1px #fff;
+    /* 글씨가 잘 보이게 하고자 쉐도우를 줌 */
+    color: #000;
+}
+
+input:focus {
+    border: 3px solid red;
+}
+
+
+.container {
+    /* width: 500px; */
+    /* height: 750px; */
+    margin: auto;
+    /* 중앙으로 배열됨 안주면 왼쪽으로 정열됨 */
+    /* background-position: center; */
+    line-height: 30px;
+}
+
+.signUp {
+    line-height: 20px;
+    /* 행간값적용 */
+}
+
+p {
+    margin: 0;
+    display: none;
+}
+
+/* 문제점 메세지를 입력했는데 반응하지 못함 */
+
+#send:hover+p {
+    display: inline-block
+}
+
+
+
+/* 
+fieldset {
+    background-image: url(../img/minions.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+legend {
+    color: magenta;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.label-required::before {
+    content: '*';
+    color: red;
+}
+
+input, textarea {
+    background-color: transparent;
+}
+
+input:focus, textarea:focus {
+    border: 3px solid red;
+    outline: none;
+}
+
+.radio-gender:checked+label {
+    color: red;
+}
+
+.hide {
+    display: none;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-send:hover+.hide {
+    display: inline-block;
+}
+
+#memo {
+    vertical-align: top;
+}
+} */
