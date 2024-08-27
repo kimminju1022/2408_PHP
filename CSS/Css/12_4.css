@@ -1,0 +1,49 @@
+.item {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    background-color: cadetblue;
+}
+
+.container-row {
+    display: flex;
+    /* 가로축으로 정렬 */
+    flex-direction: row;
+    /* row:→주축 기준 ↓교차축
+       column:↓주축 기준 →교차축  */
+    /* flex-direction: row-reverse; */
+}
+
+.container-wrap{
+display: flex;
+/* 개행없음 
+flex-wrap: nowrap; */
+/* 너비가 모자르면 개행 */
+flex-wrap: wrap;
+/* 너비가 모자르면 개행 역순
+flex-wrap: wrap-reverse; */
+}
+
+.container-flow{
+    display: flex;
+    /* flex-flrow를 활용해서 flex-direction과 flex-wrap를 한번에 지정 */
+    flex-flow: row wrap;
+    /*  flex-direction: row;
+        flex-wrap: wrap;  합친게 flex-flow*/
+}
+
+.container-justify-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content => 주축을 기준으로 정렬 */
+    justify-content: space-between;
+    /*  flex-start  주축의 시작점에 맞추어 배치
+        flex-end 주축의 끝점에 배치 
+        center 주축의 가운데에 맞추어 배치
+        space-between 주축의 시작점에 첫번째 항목을 배치하고, 주축의 끝점에 
+        마지막 항목을 배치하고 나며지 항목들을 적정한 간격으로 조절
+        즉, 양쪽배열
+        space-around between과 같은 개념이나 중심이 중앙*/
+    gap: 20px;    /* 아이템 간의 간격지정 */
+}

@@ -1,0 +1,25 @@
+div{
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width : 500px){
+    div{
+        background-color: #000;
+    /* 500 이하는 배경색이 까만 div르 보여줘 */
+    }
+}
+
+@media(min-width: 501px) and (max-width: 1000px){
+    div{
+        background-color: red;
+        /* 501~1000까지는 배경색이 빨간 div르 보여줘 */
+    }
+}
+
+@media(min-width: 1001px){
+    div{
+        background-color: green;
+        /* 화면이1001px일 경우 */
+    }
+}

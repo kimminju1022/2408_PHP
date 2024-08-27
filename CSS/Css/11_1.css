@@ -1,0 +1,39 @@
+.ball {
+    width: 50px;
+    height: 50px;
+    /* width, height로 크기먼저 설정 */
+    background-color: deepskyblue;
+    border-radius: 50%;
+    /* 모서리 둥글게 */
+    /* animation: updown 1s infinite alternate; */
+    /* @keyframes updown 애니를 주기위해 적용
+    s는 시간을 조절 
+    infinite를 주면 반복됨
+    alternate를 주면 역방향으로 다시 진행됨*/
+    border-top: 2px solid red;
+    border-bottom: 2px solid blue;
+
+    .container {
+        position: relative;
+    }
+
+    .absolute {
+        position: absolute;
+        top: 100px;
+        left: 30px;
+        /* 값을 주어 absolute를 적용시키는 부분의 글 위치가 지정됨 */
+        /* ⭐다시 확인하기 */
+    }
+
+    @keyframes updown {
+        from {
+            transform: translateY(0);
+            /* translateY는 세로 방향 */
+        }
+
+        to {
+            transform: translateY(30px);
+            /* 움직일 위치 */
+        }
+    }
+}
