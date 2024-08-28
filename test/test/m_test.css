@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* box-sizing 속성은 요소의 전체 너비와 높이를 어떻게 계산하는지 설정한다.
+     해당 box의 크기는 그만큼 더 커지지 않고 사용자가 지정한 너비나 높이만큼 
+     길이에 맞추게 된다. border값이나 padding 값는 지정한  width값이나 height
+     값에 포함이 된다는 것이다. 
+     */
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* margin: 10px; */
+}
+
+.card {
+    min-width: 200px;
+    height: 350px;
+    margin: 10px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 24px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.card-imgBox {
+    position: relative;
+    width: 180px;
+    height: 300px;
+    border: none;
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+
+.img-textBox {
+    position: absolute;
+    bottom: 0%;
+    width: 180px;
+    /* height: 40px; 높이를 좀 더 주고 싶다면*/
+    background-color: blueviolet;
+    opacity: 0.4;
+}
+
+
+.img-textBox>p {
+    margin-left: 20px;
+    line-height: 2.3rem;
+    color: azure;
+}
+
+.btn-top{
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    color: ghostwhite;
+    position: fixed;
+
+}

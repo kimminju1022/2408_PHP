@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* box-sizing 속성은 요소의 전체 너비와 높이를 어떻게 계산하는지 설정한다.
+     해당 box의 크기는 그만큼 더 커지지 않고 사용자가 지정한 너비나 높이만큼 
+     길이에 맞추게 된다. border값이나 padding 값는 지정한  width값이나 height
+     값에 포함이 된다는 것이다. 
+     */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+    /* vh 가 가지는 기본 값은 100분의 1단위로 만일 900px라면 1vh = 9px이다 
+    min-height 요소의 최소 높이를 설정한 것으로 화면에 꽉찬 높이를 만들기 위해 적용*/
+}
+
+ul {
+    margin-bottom: 20px;
+    list-style-type: none;
+    /* ul태그가 종료되는 지점에 마진을 20px주겠다
+    li의 여백을 직접 지정해도 되나 list-style-position사용해 들여쓰기를
+    적용 했으나 .side-menu의 자식요소인 li에 padding을 주어 여백을 적용 시
+    정상적으로 적용이 되었음을 확인함
+    불릿기호를 없애고자 list-style-type: none을 사용함 */
+}
+
+a {
+    text-decoration-line: none;
+    color: #fff;
+    /* 하이퍼링크의 선을 없앰 */
+}
+
+.sidebar {
+    background-color: #ff3b49;
+}
+
+.sidebar>h1 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.side-menu {
+    font-size: large;
+    color: #fff;
+    line-height: 2rem;
+}
+
+.side-menu>li {
+    padding: 0.2rem 1rem;
+
+}
+
+.side-menu>li:nth-child(1) {
+    font-weight: 900;
+    background-color: #ff5662;
+    padding: 0.5rem 1rem;
+    margin-bottom: 20px;
+    /* .side-menu안에 있는 li의 첫번째 자식요소에게 다음과 같이 적용하라 */
+}
+
+.side-menu> :not(:nth-child(1)):hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+    transition: all 1.5s;
+    /* .side-menu안에 있는 li의 첫번째 자식요소를 제외한 나머지는 다음과 같이 적용하라
+        1.5초동안에 적용한 효과들을 서서히 보여준다
+        none : transition 효과를 지정하지 않는다.
+        all : 모든 속성이 transition 효과를 얻는다.
+        property : transition 효과를 얻게될 속성을 지정한다.
+    */
+}
+
+
+.main-title {
+    /* 이미지 */
+    height: 300px;
+    background-image: url(../img/main_title.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 글꼴 */
+    color: #fff;
+}
+
+.main-title>h2 {
+font-size: 3rem;
+text-align: center;
+line-height: 300px;
+}
+
+#search{
+    width: 80%;
+}
+
+.search-bar{
+height: 50px;
+}
+
+.search-bar>form {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 1rem;
+}
+
+#search-btn {
+    /* position: fixed; */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    border: none;
+    /* 글꼴설정 */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 5px;
+
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(200px, 1fr));
+    margin: 10px;
+}
+
+.card{
+    background-color: #fff;
+    margin: 10px;
+}
+
+.card-img {
+    padding-top: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+      /* 부모요소 기준 70%크기를 가지기에 늘어나는 패딩만큼 이미지를 표시한다 
+    여기선 top을 기준하기에 top길이에 맞추어 70%의 높이를 적용하였다
+    wiedth는 자동으로 적용되어 있다 그래서 비율을 적용하고자 한 것*/
+}
+
+.card-title {
+    margin: 1rem 0;
+}
+
+.btn-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: mediumblue;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* 문제점
+1. 이미지 카드 미표출 : 
+2. 메뉴 1, 2에 해당 카테고리 표기문제
+    - 2의 경우 전체 블록이 되어 효과가 적용 되었으나 1은 되지 않음
+      둘다 문제였기에 검토한 결과 </div>의 위치 문제로 확인
+3. 검색창의 길이 조절 실패 
+    해결: #search{width: n%;}을 누락하였기 때문에 검색창의 길이가 조절되지 않았음
+    연관지어 발생한 문제
+    -#search-btn {position: fixed; 를 적용하였다 버튼의 위치를 고정하고자 적었으나
+      적용되지 않았고 양쪽 배열을 주고자 .search-bar>form 으로 form태그에 
+      display: flex; justify-content: space-around; padding: 5px 1rem;
+4. autofocus가 메뉴를 눌렀을 때도 나왔던 이유
+    현재 a태그는 주었으나 연결된 페이지는 없으며, 검색창엔 오토 포커스가 적용이 되어 있다
+    이러한 사유로 메뉴를 누를 시 새페이지로 전환되는 것이 당연하기에 눈에는 보이지 않았지만
+    새로운 화면으로 전환된 상태임으로 오토포커스가 표시되는 현상은 정상이다
+
+
+
+
+
+rem em의 차이 : 1rem = 16px
+      */
