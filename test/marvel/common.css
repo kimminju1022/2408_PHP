@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+    /* vh : view-height
+    columns가 주축이기에 가로 길이가 고정됨
+    !!!길이질문하기
+    sidebar에 따로 vh안한건 컨테이너에 둘다 적용하는게 깔끔해서다
+    */
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar {
+    background-color: #ff3b49;
+
+}
+
+h1 {
+    margin: 3rem auto;
+    /* auto없으면 글의 길이가 긴 경우 행을 넘어감 */
+    text-align: center;
+    color: #fff;
+}
+
+
+.side-menu {
+    list-style: none;
+    color: #fff;
+    margin-bottom: 3rem;
+    /* 하위 형제요소의 메뉴가 오더라도 마진이 있어 시각적으로 보기 편함 */
+}
+
+.side-menu>li {
+    /* side-menu에 속한 자식 요소에 적용 */
+    padding: 0.2rem 1rem;
+    /* side-menu에 적용하지 않은 이유는 padding: 1rem; 을 적용했을 때 
+    ul에 페딩이 잡힌 것이라 색상을 적용한 것이 ul만큼의 패딩을 가져서 
+    짧게 표기되기 때문에 li에 적용해서 해당 줄에 원하는 길이 만큼 적용된다*/
+}
+
+.side-menu>li:nth-child(1) {
+    font-weight: 900;
+    background-color: #ff5662;
+    padding: 0.5rem 1rem;
+    /* padding을 자식요소에 주어 여백을 조절함 1번 li만 적용된거라 하위에 있는
+    li요소와 좀 더 구별되어 보이도록 적용 */
+}
+
+.side-menu> :not(:nth-child(1)):hover {
+    /* side-menu에 속한 자식중 1번 자식을 제외하고 효과를 준다 */
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+    /* opacity투명도 */
+    transition: all 1.5s;
+    /* 1.5초동안에 적용한 효과들을 서서히 보여준다
+        none : transition 효과를 지정하지 않는다.
+        all : 모든 속성이 transition 효과를 얻는다.
+        property : transition 효과를 얻게될 속성을 지정한다.
+    */
+}
+
+.main {
+    background-color: #c8c8c8;
+}
+
+.main-search-bar {
+    height: 50px;
+}
+
+.main-search-bar>form {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 1rem;
+    /* display를 flex로 줌으로서 영역내에 꽉 차게 만들고
+    justify-content를 space-around로 하여 양쪽 여백을 동일하게 줌
+    해서 여백을 제외한 잔여 공간에 내용을 양쪽배열로 비율에 맞게 적용 
+    */
+}
+
+.btn-search {
+    /* 버튼 모양 */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #625af0;
+    border: none;
+    /* 글씨조절 */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 40px;
+    /* 버튼과 글의 위치를 맞추기 위해 적용 */
+
+}
+
+#search {
+    width: 90%;
+}
+
+.main-title-bar {
+    height: 300px;
+    background-image: url(../img/main_title.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* 표시글의 적용조건 ↓ */
+    color: #fff;
+    font-size: 3rem;
+    /* text-align을 쓰면 글자는 중앙으로 오지만 전체 비율에 높이가 중앙에 정열되지는 않는다
+해서 display를 flex로 주고 justify-content와 align-items를 활용해서 중앙으로 위치시킨다
+ */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+/* 1fr을 준 이유는 최소 크기를 200px로 고정시킨 이미지가 화면에 비율에 맞게 공백 없이 화면상
+이미지를 배열하게 하기 위한 것으로 최대크기는 자동으로 조절되어 2개까지 배열되지 않는 화면의
+크기 일 시 1개의 이미지를 화면 비율에 맞게끔 조절하여 표시해 준다 */
+padding: 1rem;
+gap: 1rem;
+}
+
+.card{
+    background-color: #fff;
+}
+.card-img{
+    /* 부모요소 기준 70%크기를 가지기에 늘어나는 패딩만큼 이미지를 표시한다 
+    여기선 top을 기준하기에 top길이에 맞추어 70%의 높이를 적용하였다
+    wiedth는 자동으로 적용되어 있다 그래서 비율을 적용하고자 한 것*/
+    padding-top: 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+/* width: 70%; */
+}
+.card-title{
+    margin: 1rem 0;
+}
+
+
+.btn-top{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    font-weight: 900;
+}
