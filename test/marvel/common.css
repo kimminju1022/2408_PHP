@@ -132,7 +132,7 @@ h2{
 
 .main-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(1fr));
 /* 1fr을 준 이유는 최소 크기를 200px로 고정시킨 이미지가 화면에 비율에 맞게 공백 없이 화면상
 이미지를 배열하게 하기 위한 것으로 최대크기는 자동으로 조절되어 2개까지 배열되지 않는 화면의
 크기 일 시 1개의 이미지를 화면 비율에 맞게끔 조절하여 표시해 준다 */

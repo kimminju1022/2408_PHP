@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+.container {
+} */
+
+/* head영역 */
+.title-box {
+    /* display: flex;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background-image: url(./img/img_1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 20px;
+}
+
+.title-box>h1 {
+    text-align: left;
+    margin: 50% auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    padding: 5px 1rem;
+    /* width:auto; */
+}
+
+.title-box>p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+}
+
+
+.btn-title {
+    background-color: rgb(240, 167, 31);
+    color: #fff;
+    padding: 5%;
+    border: none;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn-title:hover {
+    background-color: rgb(241, 194, 105);
+    opacity: 0.8;
+    transition: all 2s;
+    /* opacity만 줘도 투명해 지지만 좀 더 잘 보이게 하기 위해 색적용 */
+}
+
+
+/* main영역 */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 1rem;
+    gap: 1rem;
+    min-width: 200px;
+    height: 350px;
+    margin: 10px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 24px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px; */
+}
+
+.card {
+    border: 1px solid lightsteelblue;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    min-width: 300px;
+}
+
+.card-img {
+    width: 200px;
+    padding: 90%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+.item-title {
+    background-color: #363434;
+    opacity: 0.4;
+    /* 투명도 */
+    position: absolute;
+    bottom: 0%;
+    line-height: 2.3rem;
+    text-align: left;
+    color: azure;
+}
+
+.btn-top {
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5%;
+    background-color: rgb(240, 167, 31);
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.btn-top:hover {
+    background-color: rgb(241, 194, 105);
+    opacity: 0.8;
+    transition: all 1.5s;
+}
+
+/* footer영역 */
+footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: #363434;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    min-width: 100vw
+/*  display: block;
+    position: fixed;
+    bottom: 0px;
+    background-color: #363434;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
