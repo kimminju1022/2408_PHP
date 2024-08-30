@@ -3,28 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
-    /* 스크롤 천천히 추가 */
-}
+
 a {
     text-decoration-line: none;
     color: #fff;
 }
 
 /* title */
-
-.head-bar {
+.head-bar{
     display: grid;
-    grid-template-columns: 350px, 1fr;
-    
-    padding: 1rem;
-    gap: 1rem;
-    min-width: 200px;
-    height: 350px;
-    margin: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
-
 .title-box {
     background-image: url(./img/img_1.jpg);
     background-position: center;
@@ -32,19 +21,18 @@ a {
     background-repeat: no-repeat;
     color: #fff;
     min-width: 100vw;
-    min-height: 100px;
-    padding: 20px;
+    min-height: 400px;
+    padding: 30px;
 }
 
 .title-box>h1 {
-    font-size: 3rem;
-    font-family: Georgia, 'Times New Roman';
+    font-size: 4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 50px;
     display: inline-block;
 }
 
 .title-box>p {
-    display: block;
     font-size: 1.5rem;
     font-weight: 900;
     text-align: left;
@@ -57,11 +45,10 @@ a {
     color: #fff;
     border: none;
     border-radius: 5px;
-    font-family: Verdana;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
     padding: 10px;
-    
     /* position: fixed;
     bottom: 10px; */
 }
@@ -77,13 +64,11 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
    
-    list-style: none;
     padding: 1rem;
     gap: 1rem;
     min-width: 200px;
     height: 350px;
     margin: 30px;
-
 }
 
 .card {
@@ -126,7 +111,7 @@ a {
     background-color: #1f1d1d;
     opacity: 0.4;
     color: #fff;
-    line-height: 50px;
+
     /* text-indent: 10px;
     text-align: left(10px);
  */
@@ -141,9 +126,10 @@ a {
     color: #fff;
     border: none;
     border-radius: 5px;
-    line-height: 2rem;
+    line-height: 1rem;
+    padding: 10px;
     bottom: 0;
-    font-family: Verdana;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .btn-top:hover {
@@ -164,3 +150,43 @@ footer {
     font-size: 0.8rem;
     min-width: 100vw;
 }
+
+/* .main-title {
+
+    height: 300px;
+    background-image: url(../img/main_title.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #fff;
+}
+
+.main-title>h2 {
+font-size: 3rem;
+text-align: center;
+line-height: 300px;
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(200px, 1fr));
+    margin: 10px;
+}
+
+.card{
+    background-color: #fff;
+    margin: 10px;
+}
+
+.card-img {
+    padding-top: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-title {
+    margin: 1rem 0;
+}
+
+ */
