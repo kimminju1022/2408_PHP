@@ -258,15 +258,44 @@ AS : 컬럼 또는 테이블에 별징을 부여
 
 
 
+-- limit, offset : 출력하는 데이터의 개수제한
+-- select에는 order by써서 
 
+SELECT *
+FROM employees
+order BY emp_id desc
+LIMIT 5 OFFSET 10
+;
 
+-- offset을 사용할 땐 limit가 반드시 앞에 붙는다 set라고 생각해라
+-- ex 0을 쓰면 번호가 0이 없기 때문에 1-5까지 나옴
 
+-- 재직중인 사원 연봉 상위 5명 조회
+/*SELECT max(salary)
+FROM salaries
+WHERE 
+end_at IS NULL
+ORDER BY salary 
+limit 5
+;
+*/
+SELECT *
+FROM salaries
+WHERE
+	end_at IS null
+ORDER BY salary desc
+LIMIT 5
+;
+-- 전체 데이터 중 salaries 테이블에서 종료일자(end_at) IS null(미종료)된 것중
+-- salary에 해당되는 데이터에서 역순으로 5개 보여달라
 
-
-
-
-
-
-
+-- sellect문의 기본구조
+/* sellect [DISTINCT][컬럼명]
+	FROM[테이블명]
+	WHERE[쿼리조건]
+	GROUP BY [컬럼명] HAVING [집계함수 조건]
+	order BY [컬럼명ASC|| 컬럼명DESC]
+	LIMIT [n] OFFSET[n]
+*/
 
 
