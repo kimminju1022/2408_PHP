@@ -5,7 +5,7 @@
 -- join을 하면 두 테이블의 정보를 해결할 수 있다
 -- innerjoin은 교집합된 내용을 조합하여 만든다
 
--- 사원번호,이름, 소속부서코드
+-- 사원번호,이름, 소속부서코드를 출력하라
 SELECT
 	employees.emp_id
 	,employees.name
@@ -17,6 +17,7 @@ FROM employees
 ;
 -- 	join on 은 조인할 때 어떤 조건과 연결할때 where없이 뒤에 붙여넣을 수 있다
 -- WHERE department_emps.end_at IS null → ON employees.emp_id = department_emps.emp_id and department_emps.end_at IS null
+
 SELECT
 	employees.emp_id
 	,employees.name
@@ -71,6 +72,7 @@ WHERE department_emps.dept_code+'0001'
 -- 기준테이블의 모든 데이터를 출력
 -- 조인 대상 테이블에 없는 값은 null로 출력
 -- 만일 오른쪽에 정보가 없다면 null반영됨
+
 -- 모든 사원의 사번, 이름, 부서장 시작날짜
 SELECT
 employees.emp_id 
@@ -84,6 +86,26 @@ WHERE
 	department_managers.end_at IS NULL
 ORDER BY department_managers.start_at desc
 ;
+
+
+-- --------------------------------------------
+-- right outer join
+-- 오른쪽 테이블을 기준으로 join을 실행
+-- 기준테이블의 모든 데이터를 출력하고 조인대상 테이블에 없는 값을 null로 출력한다
+
+-- 모든 사원의 사번, 이름, 부서장 시작날짜를 출력하라
+SELECT 
+	employees.emp_id
+	, employees.name
+	,department_managers.start_at
+FROM department_managers
+	RIGHT JOIN employees
+		ON department_managers.emp_id = employees.emp_id
+WHERE
+	department_managers.end_at IS null
+	ORDER BY department_managers.start_at DESC
+;
+
 
 
 -- --------------------------------------------
