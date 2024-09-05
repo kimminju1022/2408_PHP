@@ -21,9 +21,10 @@ WHERE
 		WHERE
 			department_managers.end_at IS null
 			AND department_managers.dept_code = 'D001'
-)
+	)
 ;
--- 4616옥은혜의 정보를 emp_id로 출력하는 방법도 있다(영상보기!!!!)
+-- 4616옥은혜의 정보를 emp_id로 출력하는 방법으로 서브쿼리에 들어가 있는
+-- 정보를 통해 추출했던 값에서 emp_id와 name을 추출하라는 명령
 -- ↑서버쿼리의 결과가 select랑 같기 때문에 where절 쿼리랑 일치해야 한다
 
 

@@ -107,6 +107,7 @@ group by emp_id
 	having avg_sal between 30000000 and 70000000
 ;
 */
+
 -- 별칭, between 주었으나 표기 불가
 -- 집계함수는 where절 불가하다 having절을 사용하라
 
@@ -124,7 +125,7 @@ WHERE
  	HAVING AVG(salaries.salary)>=70000000
 	)
 	;
-/*
+/*정답
 SELECT
 	employees.emp_id
 	,employees.name
@@ -138,7 +139,7 @@ WHERE
  	HAVING AVG(salaries.salary)>=70000000
 	)
 	;
-*/	
+*/
 
 
 -- 10. 현재 직급이 'T005'인, 사원의 사원번호와 이름을 조회해 주세요. 
@@ -179,5 +180,5 @@ WHERE employees.emp_id IN(
 	AND title_emps.title_code = 'T005'
 	)
 	;
-
+-- 위 2 풀이의 결과값 차이는 순서대로 출력했는가의 차이다
 -- distinct로 묶을 수 도 있다

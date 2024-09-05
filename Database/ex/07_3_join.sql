@@ -51,7 +51,6 @@ FROM employees
 ;
 2.
 
-*/
 
 SELECT
 	employees.emp_id
@@ -66,7 +65,8 @@ FROM employees
 	join departments
 		ON departments.dept_code = department_emps.dept_code
 WHERE department_emps.dept_code+'0001'
-
+;
+*/
 
 -- lefe join은 왼쪽 도구에 있는 것 기준으로 테이블을 두고 join 실행
 -- 기준테이블의 모든 데이터를 출력
