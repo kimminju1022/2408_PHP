@@ -13,21 +13,6 @@ for($i = 1; $i<100; $i++){
     echo $i." "; 
 }
 
-
-// for($i = 1; $i <= 100; $i ++){
-//     echo $i." ";
-//     if(($i%3)===1){
-//         continue;
-//     }
-//     echo "짝!";
-    
-    // for($z = 3; $z < 100; $z++){
-    //     if(($z%3)===1)
-    //     continue;
-    // }
-    // echo "짝!";
-// }
-
 echo "\n-----\n";
 
 /**Q2. 반복문을 이용하여 급여가 5000이상이고 성별이 남자인 사원의 id와 이름을 출력하라
@@ -49,6 +34,12 @@ foreach($arr as $info){
     echo 'ID : '.$info['salary'].'  '.'이름 : '.$info['name']."\n";
 }
 
+// T해설 int로 형변환 문자열로 맞춰줌
+foreach($arr as $key => $item){
+    if(((int)$item["salary"]>=5000) && ($item["gender"]==='m')){
+        echo "id : ".$item["id"].", name : ".$item["name"]."\n";
+    }
+}
 
 
 // 무한반복됨
