@@ -21,8 +21,8 @@ echo rand();
 
 
   
-        //삭제실행
-        // unset($target[$key]);
+//         삭제실행
+//         unset($target[$key]);
 
 // // if($rand2 == $rand1)
 // while($rand_num){
@@ -33,16 +33,16 @@ echo rand();
 
 // foreach($rand_num as $rand1){
 //     echo $rand1;
-// $lotto_num = arr[$rand1, $rand2, $rand3, $rand4, $rand5];
+// $lotto_num = arr($rand1, $rand2, $rand3, $rand4, $rand5);
 // switch($rand_num){
 //         $lotto = "";
 //         echo $lotto;
 //         break;
 //     }
-//     // $lotto = "";
+//     $lotto = "";
 
-// // }
-// // if()
+// }
+// if()
 
 // echo "행운의 번호는 [$lotto]"." 보너스번호 : [$rand6]"."축하합니다";
 // var_dump($rand_num);
