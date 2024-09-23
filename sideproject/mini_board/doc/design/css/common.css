@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*크기를 미리 잡아주어 틀을 갖추 후 시작*/
+    font-family: "맑은고딕";
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    color: #2551ff;
+}
+button{
+ background-color: #3c62fa;
+ border-radius: 40px;
+ border: none;
+ color: #fff;
+ font-size: 1.2rem;
+ cursor: pointer;
+}
+
+button:hover{
+    background-color: #1d46e7;
+}
+
+.btn-middle{
+    width: 150px;
+    height: 40px;
+}
+
+.btn-small{
+    width: 50px;
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+main{
+    background-color: #c2d4ff;
+    margin: 0 auto;
+    padding: 15px 30px;
+    width: 800px;
+    border-radius: 10px;
+    /* 현 상태의 경우 높이가 설정안되었다 그 이유는 패딩을 주어 전체 길이 의 여백을 준것 */
+}
+/* main */
+.main-footer{
+    margin: 40px 0;
+    text-align: center;
+}
