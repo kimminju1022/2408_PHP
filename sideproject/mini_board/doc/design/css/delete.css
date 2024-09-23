@@ -1,4 +1,12 @@
-.main-header{
+.title-message{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 30px 0;
+}
+
+
+
+/* .main-header{
     text-align: center;
     margin-top: 40px;
     font-size: 1.2rem;
@@ -32,4 +40,4 @@
 }
 .main-content{
     margin-top: 60px;
-}
+} */

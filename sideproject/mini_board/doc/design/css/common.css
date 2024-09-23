@@ -10,6 +10,20 @@ h1{
     font-size: 3rem;
     color: #2551ff;
 }
+
+main{
+    background-color: #c2d4ff;
+    margin: 0 auto;
+    padding: 15px 30px;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* 높이가 설정안되었다면 그 이유는 패딩을 주어 전체 길이 의 여백을 준것 */
+}
+
+/* button */
 button{
  background-color: #3c62fa;
  border-radius: 40px;
@@ -29,8 +43,11 @@ button:hover{
 }
 
 .btn-small{
+    /* position:fixed;
+    bottom: 10px;   main안에 있지만 안으로 묶이지 않고 나감 이유를 찾지 못함 */
     width: 50px;
     height: 50px;
+    margin: -10px 20px;
 }
 
 a{
@@ -38,16 +55,23 @@ a{
     color: #000;
 }
 
-main{
-    background-color: #c2d4ff;
-    margin: 0 auto;
-    padding: 15px 30px;
-    width: 800px;
-    border-radius: 10px;
-    /* 현 상태의 경우 높이가 설정안되었다 그 이유는 패딩을 주어 전체 길이 의 여백을 준것 */
-}
-/* main */
 .main-footer{
-    margin: 40px 0;
+    padding-bottom: 20px;
     text-align: center;
+    /* 바닥에 붙이고 싶다........... */
+}
+
+/* text */
+input{
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;  
+}
+
+textarea{
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    resize: none;
 }

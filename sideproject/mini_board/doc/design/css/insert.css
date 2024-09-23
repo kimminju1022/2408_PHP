@@ -1,4 +1,4 @@
-.box{
+/* .box{
     display: grid;
     grid-template-columns: 100px 1fr;
     margin-bottom: 10px;
@@ -38,5 +38,43 @@ margin-top: 40px;
     font-size: 1.2rem;
     border: none;
     outline: none;
+    resize: none;
+} */
+.container{
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    text-align: center;
+    padding: 5px;
+}
+
+.title-box{
+    background-color: #3c62fa;
+    border-radius: 10px 0 0 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.text-box{
+    background-color: #3c62fa;
+    border-radius: 10px 0 0 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 150px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;
+}
+
+textarea{
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;
+    margin-bottom: 20px;
     resize: none;
 }
