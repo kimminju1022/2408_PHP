@@ -1,0 +1,136 @@
+/* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 크기를 미리 잡아주어 틀을 갖추 후 시작
+    font-family: "맑은고딕";
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    color: #2551ff;
+}
+
+main{
+    background-color: #c2d4ff;
+    margin: 0 10px;
+    padding: 15px 30px;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+ 높이가 설정안되었다면 그 이유는 패딩을 주어 전체 길이 의 여백을 준것 
+}
+
+ button 
+button{
+ background-color: #3c62fa;
+ border-radius: 40px;
+ border: none;
+ color: #fff;
+ font-size: 1.2rem;
+ cursor: pointer;
+}
+
+button:hover{
+    background-color: #1d46e7;
+}
+
+.btn-middle{
+    width: 150px;
+    height: 40px;
+}
+
+.btn-small{
+    position:fixed;
+    bottom: 10px;   main안에 있지만 안으로 묶이지 않고 나감 이유를 찾지 못함 
+    width: 50px;
+    height: 50px;
+    margin: -10px 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+.main-top{
+    height: 100px;
+}
+.main-list{
+    height: 300px;
+    margin: 0 20px;
+}
+.main-footer{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+ text 
+input{
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;  
+}
+
+textarea{
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    resize: none;
+} */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*크기를 미리 잡아주어 틀을 갖추 후 시작*/
+    font-family: "맑은고딕";
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    color: #2551ff;
+}
+button{
+ background-color: #3c62fa;
+ border-radius: 40px;
+ border: none;
+ color: #fff;
+ font-size: 1.2rem;
+ cursor: pointer;
+}
+
+button:hover{
+    background-color: #1d46e7;
+}
+
+.btn-middle{
+    width: 150px;
+    height: 40px;
+}
+
+.btn-small{
+    width: 50px;
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+main{
+    background-color: #c2d4ff;
+    margin: 0 auto;
+    padding: 15px 30px;
+    width: 800px;
+    border-radius: 10px;
+    /* 현 상태의 경우 높이가 설정안되었다 그 이유는 패딩을 주어 전체 길이 의 여백을 준것 */
+}
+/* main */
+.main-footer{
+    margin: 40px 0;
+    text-align: center;
+}

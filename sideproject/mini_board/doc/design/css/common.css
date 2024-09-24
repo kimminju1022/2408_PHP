@@ -13,13 +13,14 @@ h1{
 
 main{
     background-color: #c2d4ff;
-    margin: 0 auto;
+    margin: 0 10px;
     padding: 15px 30px;
     width: 800px;
     height: 500px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     /* 높이가 설정안되었다면 그 이유는 패딩을 주어 전체 길이 의 여백을 준것 */
 }
 
@@ -54,11 +55,16 @@ a{
     text-decoration: none;
     color: #000;
 }
-
+.main-top{
+    height: 100px;
+}
+.main-list{
+    height: 300px;
+    margin: 0 20px;
+}
 .main-footer{
-    padding-bottom: 20px;
-    text-align: center;
-    /* 바닥에 붙이고 싶다........... */
+    display: flex;
+    margin-bottom: 20px;
 }
 
 /* text */
