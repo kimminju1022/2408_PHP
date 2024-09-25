@@ -15,4 +15,5 @@ define("MY_PATH_ROOT",$_SERVER["DOCUMENT_ROOT"]."/"); //웹서버 document root
 define("MY_PATH_DB_LIB",MY_PATH_ROOT."lib/db_lib.php"); //DB라이브러리 [c:\apche24\htdocs\lib\db_lib.php]주소를 MY_PATH_DB_LIB로 선언했기 때문에 다른곳에서도 명을 사용
 
 // **로직 관련 설정 **
-define("MY_LIST_COUNT", 5);
+define("MY_LIST_COUNT", 3);
+define("MY_PAGE_BUTTON_COUNT", 5);
