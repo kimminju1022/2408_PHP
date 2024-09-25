@@ -34,7 +34,8 @@ try {
     //pagination
     $result = my_board_select_pagination($conn, $arr_prepare);
 } catch (Throwable $th) {
-    echo $th->getMessage();
+    require_once(MY_PATH_ERROR);
+    exit;
 }
 
 ?>
@@ -51,12 +52,13 @@ try {
 </head>
 
 <body>
-    <header>
-        <h1> Mini Board</h1>
-    </header>
+    <?php
+    require_once(MY_PATH_ROOT."header.php");
+    ?>
+
     <main>
         <div class="main-top">
-            <a href="./insert.html">
+            <a href="/insert.php">
                 <button class="btn-middle">글 작성</button>
             </a>
         </div>
@@ -78,6 +80,9 @@ try {
             <?php if($page !== 1) { ?>
                 <a href="/index.php?page=<?php echo $prev_page_butoon_number ?>"><button class="btn-small">이전</button></a>
             <?php } ?>
+            <?php  
+            
+            ?>
             <?php for($i = $start_page_button_number; $i <= $end_page_button_number; $i++){?>
                 <a href="/index.php?page=<?php echo $i ?>"><button class="btn-small <?php echo $page === $i ? "btn_seleted" : "" ?>"><?php echo $i ?></button></a>
             <?php } ?>            

@@ -1,4 +1,4 @@
-/* .box{
+.box{
     display: grid;
     grid-template-columns: 100px 1fr;
     margin-bottom: 10px;
@@ -39,8 +39,8 @@ margin-top: 40px;
     border: none;
     outline: none;
     resize: none;
-} */
-.container{
+}
+/* .container{
     display: grid;
     grid-template-columns: 1fr 7fr;
     text-align: center;
@@ -77,4 +77,4 @@ textarea{
     padding: 10px 20px;
     margin-bottom: 20px;
     resize: none;
-}
+} */

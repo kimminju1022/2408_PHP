@@ -50,3 +50,31 @@ function my_board_total_conut(PDO $conn){
     return $result["cnt"];
 
 }
+// board 테이블 insert처리
+function my_board_insert(PDO $conn,array $arr_param){
+    $sql = 
+        " INSERT INTO board ( "
+        ."       title "
+        ."       ,content "
+        ." ) "
+        ." values ( "
+        ."       :title "
+        ."       ,:content "
+        ." ) "
+    ;
+
+    $stmt = $conn->prepare($sql);
+    $result_flg = $stmt->execute($arr_param);
+
+    if(!$result_flg) {
+        throw new Exception("쿼리 실행 실패");
+    }
+
+    $result_cnt = $stmt->rowCount();
+
+    if($result_cnt !==1) {
+        throw new Exception("Insert Count 이상 : ".$result_cnt);
+    }
+    
+    return true;
+}
