@@ -78,3 +78,21 @@ function my_board_insert(PDO $conn,array $arr_param){
     
     return true;
 }
+// id로 게시글 조회
+function my_board_select_id(PDO $conn, array $arr_param){
+    $sql =
+    " SELECT "
+    ."      * "
+    ." FROM "
+    ."      board "
+    ." WHERE "
+    ."      id = :id"
+    ;
+    $stmt = $conn->prepare($sql);
+    $result_flg = $stmt->execute($arr_param);
+    if(!$result_flg) {
+        throw new Exception("쿼리 실행 실패");
+    }
+    
+    return $stmt->fetch();
+}

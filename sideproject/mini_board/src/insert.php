@@ -19,7 +19,7 @@ if (strtoupper($_SERVER["REQUEST_METHOD"] === "POST")) {
 
         $conn->commit();
 
-        header("Loaction: /");
+        header("Location: /");
         exit;        
 
     } catch (Throwable $th) {
@@ -68,7 +68,7 @@ if (strtoupper($_SERVER["REQUEST_METHOD"] === "POST")) {
             </div>
             <div class="main-footer">
                 <button type="submit" class="btn-small">작성</button>
-                <a href="./index.html"><button type="button" class="btn-small">취소</button></a>
+                <a href="/"><button type="button" class="btn-small">취소</button></a>
             </div>
         </form>
     </main>
