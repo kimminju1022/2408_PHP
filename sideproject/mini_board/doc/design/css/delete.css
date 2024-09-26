@@ -5,8 +5,7 @@
 }
 
 
-
-/* .main-header{
+ .main-header{
     text-align: center;
     margin-top: 40px;
     font-size: 1.2rem;
@@ -19,7 +18,7 @@
     font-size: 1.2rem;
     color: #fff;
     font-weight: 900;
-    height: 50px;
+    min-height: 50px;
 }
 
 .box-title {
@@ -40,4 +39,4 @@
 }
 .main-content{
     margin-top: 60px;
-} */
+} 

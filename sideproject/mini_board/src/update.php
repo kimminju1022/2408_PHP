@@ -51,8 +51,27 @@ try {
 
         //transaction start
         $conn->beginTransaction();
+
+        $arr_prepare =[
+            "id" => $id
+            ,"title" =>$title
+            ,"content" => $content
+        ];
+
+        my_board_update($conn, $arr_prepare);
+
+        //commit
+        $conn->commit();
+
+        // move -> detail page 
+        header("Location: /detail.php?id=".$id."&page=".$page);
+        exit; //exit : 불필요한 resource 미실행
     }
 } catch (Throwable $th) {
+    if(!is_null($conn) && $conn->inTransaction()){
+        $conn->rollBack();
+    }
+
     require_once(MY_PATH_ERROR);
     exit;
 }
@@ -80,7 +99,6 @@ try {
     <main>
         <form action="/update.php" method="post">
             <input type="hidden" name="id" value="<?php echo $result["id"] ?>">
-            <input type="hidden" name="id" value="<?php echo $result["id"] ?>">
 
             <div class="box title-box">
                 <div class="box-title">글번호</div>
@@ -89,7 +107,7 @@ try {
             <div class="box title-box">
                 <div class="box-title">제목</div>
                 <div class="box-content">
-                    <input class="box-content" type="text" name="title" id="title" value="<?php echo $result["id"] ?>">
+                    <input class="box-content" type="text" name="title" id="title" value="<?php echo $result["title"] ?>">
                 </div>
             </div>
             <div class="box content-box">
@@ -99,7 +117,7 @@ try {
                 </div>
             </div>
             <div class="main-footer">
-                <button type="submit" class="btn-small">완료</button>
+                <button type="submit" class="btn-small">완료</button></a>
                 <a href="/detail.php?id=<?php echo $result["id"] ?>&page=<?php echo $page ?>"><button type="button" class="btn-small">취소</button></a>
             </div>
         </form>

@@ -1,6 +1,8 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/config.php"); //config파일의 정보를 가져와 쓴다
 require_once(MY_PATH_DB_LIB); //db_lib 파일의 정보를 가져와 쓴다
+
+$conn = null;
 // POST처리
 if (strtoupper($_SERVER["REQUEST_METHOD"] === "POST")) {
     try {
