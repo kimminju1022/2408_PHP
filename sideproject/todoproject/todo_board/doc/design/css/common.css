@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*크기를 미리 잡아주어 틀을 갖추 후 시작*/
+    font-family:Verdana;
+}
+
+head{
+    height: 300px;
+}
+
+h1{
+    text-align: center;
+}
+
+.coment_btn {
+    position: relative;
+    display: inline-block;
+}
+
+.main-footer {
+    display: flex;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+/* img */
+.W_H_img{
+    text-align: left;
+    margin: 0 0 -10px 20px;
+    width: 100px;
+}
+
+.check_list{
+    /* display: grid; */
+    /* grid-template-columns: 1fr 5fr 5fr; */
+    padding: 5px;
+}
+
+.W_box{
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    height: 30px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 900;
+}
+
+.box-title{
+    background-color: #3c62fa;
+    border-radius: 40px 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.during_box{
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    text-align: center;
+    margin: 0 10px;
+    font-weight: 400;
+}
+
+.during_at, .during_time{
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    text-align: center;
+    margin: 0 10px;
+    font-weight: 400;
+}
+
+.box-content{
+    color: rgb(22, 21, 21);
+    border-radius: 0 40px 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content > input, .box-content>textarea{
+    width: 90%;
+    height: 90%;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    resize: none;
+} 
+
+
+.W_box>p{
+    margin-left: 10px;
+    color: rgba(211, 30, 17, 0.966);
+}
+
+input{
+    border: none;
+    padding: 10px;
+}
+input:hover{
+    background-color: rgb(238, 247, 247);
+}
+
+/* button */
+button{
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+   }
+  
+   .btn-middle{
+       width: 150px;
+       height: 40px;
+   }
+   
+   .btn-small{
+       /* position:fixed;
+       bottom: 10px;   main안에 있지만 안으로 묶이지 않고 나감 이유를 찾지 못함 */
+       width: 70px;
+       height: 30px;
+       margin: -10px 20px;
+   }
+
+
+
+   /* hover */
+.hover-text {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    /* 버튼의 오른쪽에 위치 */
+    transform: translateY(-50%);
+    white-space: nowrap;
+    color: black;
+    font-weight: 400px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+    /* 트랜지션 적용 */
+}
+
+.coment_btn:hover .hover-text {
+    opacity: 1;
+    left: 100%;
+    /* 커서가 버튼 위에 있을 때 글자가 자연스럽게 옆에 나타남 */
+}
+/*  
+button:hover{
+    background: linear-gradient( 50deg, rgb(241, 235, 235) rgb(187, 201, 255) );
+} */

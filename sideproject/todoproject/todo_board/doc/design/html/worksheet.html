@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sideproject/todoproject/todo_board/doc/design/css/common.css">
+    <link rel="stylesheet" href="/sideproject/joint/degine/common_main.css">
+    <link rel="stylesheet" href="/sideproject/todoproject/todo_board/doc/design/css/worksheet.css">
+    <title></title>
+</head>
+<body>
+    <head>
+        <h1>To Do List</h1>
+    </head>
+<main >
+    <div class="check_list">
+        <div class="W_box">
+            <div class="box-title">내용</div>
+            <input type="text" name="title" id="text">
+            <p>20글자 내로 입력해 주세요</p>
+        </div>
+        <div class="W_box">
+            <div class="box-title">마감일자</div>
+            <div class="during_at">
+                <input type="datetime" name="start_at" id="start_at">
+                <p> ~ </p>
+                <input type="datetime" name="end_at" id="end_at">
+            </div>            
+            <p>mm.dd 형식으로 숫자만 입력해주세요</p>
+        </div>
+        <div class="W_box">
+            <div class="box-title">소요시간</div>
+            <div class="during_time">
+                <input type="time" name="start_time" id="start_time">
+                <p> ~ </p>
+                <input type="time" name="end_time" id="end_time">
+            </div>
+            <p>hh:mm 형식으로 시간을 선택해주세요</p>
+        </div>
+
+        <div class="main-footer">
+            <a href="/sideproject/todoproject/todo_board/doc/design/html/check_p.html"><button type="button" class="btn-small">수정</button></a>
+            <a href="/sideproject/todoproject/todo_board/doc/design/html/todo_main.html"><button type="button" class="btn-small">취소</button></a>
+        </div>
+
+    </div>
+</main>
+
+    
+</body>
+</html>

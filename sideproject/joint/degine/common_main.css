@@ -1,0 +1,79 @@
+*{
+
+}
+#check-btn { display: none; }
+#check-btn:checked ~ .menubars { display: block; } 
+.menubars { display: none; }
+
+h2{
+    background-color: rgb(18, 57, 233);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 200px;
+    
+}
+
+
+li{
+    list-style-type: none;
+}
+
+li> button:hover{
+    border-bottom:blue;
+    border-bottom-style: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}   
+
+.M_card{
+    display: inline-flex;
+}
+
+.container{
+    display: grid;
+    margin: 0 auto;
+}
+
+.card_img1{
+    /* flex-direction: column;
+    width: 300px;
+    height: 500px;
+    margin-bottom: 50PX; */
+    background-image: url(/sideproject/joint/degine/img/P_todo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn_li{
+
+}
+
+.card ul li:hover ~ h2 {
+    border: 3px solid rgb(216, 215, 215);
+}
+
+.main-top{
+    display: grid;
+    text-align: right;
+    margin: 20px;
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 400px;
+    font-size: 1.2rem;
+}
+
+.main-top>a{
+    background-color: linear-gradient( 50deg, rgb(241, 235, 235) rgb(187, 201, 255));
+    color: royalblue;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
