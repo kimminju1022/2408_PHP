@@ -51,10 +51,6 @@ a{
     background-repeat: no-repeat;
 }
 
-.btn_li{
-
-}
-
 .card ul li:hover ~ h2 {
     border: 3px solid rgb(216, 215, 215);
 }
