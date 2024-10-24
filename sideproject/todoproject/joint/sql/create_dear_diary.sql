@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS user_info;
 -- 테이블 생성
 CREATE TABLE user_info(
 	id					BIGINT(10)UNSIGNED		PRIMARY KEY AUTO_INCREMENT
-	,member_id		VARCHAR(10)				   UNIQUE KEY NOT NULL
+	,member_id		VARCHAR(20)				   UNIQUE KEY NOT NULL
 	,pw	 			VARCHAR(300)				NOT NULL
 	,name				VARCHAR(20)					NOT NULL
 	,birth	 		DATE							NOT NULL
