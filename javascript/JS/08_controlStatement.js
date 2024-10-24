@@ -75,4 +75,3 @@ for(let val of STR1){
     console.log(val);
 }
 console.log(STR1);
-

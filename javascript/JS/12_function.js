@@ -48,6 +48,10 @@ function test3(a,b) {
     return 'test';
 }
 
+const arrowFnc5 = () => 'test';
+function test3() {
+    return 'test';
+}
 
 //처리가 여러줄일 경우
 const arrowFnc4 = (a,b) => {
@@ -64,3 +68,5 @@ function test4(a,b){
         return 'a가 더 큼';    
     }
 }
+
+
