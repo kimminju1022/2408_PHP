@@ -69,4 +69,21 @@ function test4(a,b){
     }
 }
 
+// 즉시 실행 함수
+const execFnc = (function(a,b){
+    return a+b;
+})(5,6);
 
+/**콜백 함수
+ * 자주쓰이는 함수로 
+ */
+function myCallBack(){
+    console.log('myCallBack');
+}
+
+function myChkPrint(callBack,flg){
+    if(flg){
+        callBack();
+    }
+}
+myChkPrint(myCallBack,true);
