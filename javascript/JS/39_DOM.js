@@ -112,3 +112,7 @@ A_LINK1.setAttribute('href','https://www.naver.com');
 
 const INPUT_PH1 = document.querySelector('#input-2'); //덧방 가능해~
 INPUT_PH1.setAttribute('placeholder','여기적어봐');
+
+
+const DATE1 = new Date()
+new Date('2020/07/24').getMonth('#date1');
