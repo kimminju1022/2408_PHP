@@ -1,0 +1,52 @@
+body {
+    width: 1600px;
+    height: 1200px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 10fr;
+}
+
+h1 {
+    min-width: 300px;
+    height: 60px;
+}
+
+#start_btn {
+    margin: 30px 10px;
+    font-size: 1.3rem;
+    font-family: DungGeunMo;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+    color: rgb(60, 122, 255);
+}
+
+.game{
+    position: relative;
+}
+.hidden_box {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    position: relative;
+}
+
+.inner_box {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.hidden_box:active {
+    background-color: rgb(0, 50, 214);
+}
+
+.inner_box:active {
+    background-color: rgb(21, 122, 255);
+}  /* 숨는다 할때만 배경나타내고자 js에 바로 적용 */

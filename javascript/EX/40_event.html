@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../JS/40_event.js" defer></script>
+    <link rel="stylesheet" href="../css/40_event.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Title</h1>
+    <button type="button" onclick="TilteEventBtn()">색상변경</button>
+
+    <!-- <h2 id="img">title2</h2>
+    <img src="../img/P_해야지.png" alt="">
+    <button type="button" onclick="imgEventBtn()">형태변경</button> -->
+
+    <!-- 인라인 이벤트 -->
+    <button type="button" onclick="inlineEventBtn()" >인라인 이벤트 버튼</button>
+    <br>
+    <!-- addEventListener -->
+    <button id="btn1" type="button" >이벤트 리스너</button>
+    <br>
+    <p id="naver">네이버로</p>
+    <br>
+    <!-- 연습문제 색깔바꾸기 -->
+    <button id="btn-toggle" type="button">토글버튼</button>
+    <br>
+    <h2>테스트용</h2>
+    <h3>이벤트 객체 테스트</h3>
+    <button id="btn-modal" type="button">모달모달</button>
+
+    <div class="modal-container display-none">
+        <div class="modal-item">
+            <p>모달모달</p>
+            <button id="modal_close" type="button">닫기</button>
+        </div>
+
+    </div>
+</body>
+</html>
