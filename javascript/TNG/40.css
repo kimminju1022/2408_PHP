@@ -1,4 +1,4 @@
-body {
+/* body {
     width: 1600px;
     height: 1200px;
     display: grid;
@@ -49,4 +49,24 @@ h1 {
 
 .inner_box:active {
     background-color: rgb(21, 122, 255);
-}  /* 숨는다 할때만 배경나타내고자 js에 바로 적용 */
+}  숨는다 할때만 배경나타내고자 js에 바로 적용
+   */
+.container{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    position:absolute;
+    top: 300px;
+    left: 300px;
+}
+
+.box{
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+    background-color: blue;
+}
+
+.busted{
+    background-color: aquamarine
+}

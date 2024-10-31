@@ -1,0 +1,11 @@
+.text_color_R{
+    color: red;
+}
+.text_color_B{
+    color: blue;
+}
+
+#text{
+    font-size: 1.5rem;
+    font-weight: 600;
+}

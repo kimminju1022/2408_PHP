@@ -80,6 +80,7 @@
 // //     }
 // // })
 
+/**완성은 했는데 2번은 되는데 두근두근 이후 1회성;;;
 //함수별 
 const GAME = document.querySelector('.hidden_box');
 const BTN_HELLO = document.querySelector('#start_btn');
@@ -151,8 +152,8 @@ BTN_GET.addEventListener('click', callAlert1);
 
 function callAlert1() {
     alert('들켰다');
-    BTN_GET.removeEventListener('click', callAlert1);
     BTN_FOUND.removeEventListener('mouseenter', callAlert);
+    BTN_GET.removeEventListener('click', callAlert1);
 
     // 숨는다
     const BTN_HIDE = document.querySelector('.inner_box');
@@ -163,5 +164,60 @@ function callAlert1() {
 
         BTN_HIDE.removeEventListener('click', callAlert2);
         initGame();
+    }
+}
+ */
+/** prof. 풀이 */
+(()=>{
+    // 1번
+    const BTN_INFO = document.querySelector('#btn-info');
+    BTN_INFO.addEventListener('click', () =>{
+        alert('안녕하세요 \n숨어있는 div를 찾아주세요.');
+    });
+    // 2번
+    const CONTAINER = document.querySelector('.container');
+    CONTAINER.addEventListener('mouseenter',dokidoki);
+    //3번
+    const BOX = document.querySelector('.box');
+    BOX.addEventListener('click',busted);
+})()
+
+//두근두근 함수
+function dokidoki(){
+    alert('두근두근');
+}
+//들켰다 함수
+    function busted(){
+    alert('들켰다');
+    const CONTAINER = document.querySelector('.container');
+    const BOX = document.querySelector('.box');
+    
+    BOX.removeEventListener('click',busted);
+    BOX.classList.add('busted');
+    //5-1
+    BOX.addEventListener('click',hide);
+
+    //4
+    CONTAINER.removeEventListener('mouseenter',dokidoki);
+    
+    //5-2
+    function hide(){
+        alert('숨는다');
+        const CONTAINER = document.querySelector('.container');
+        const BOX = document.querySelector('.box');
+        
+        BOX.classList.remove('busted'); //들켰다 배경색 제거
+        BOX.addEventListener('click',busted);
+        BOX.removeEventListener('click',hide);
+
+        CONTAINER.addEventListener('mouseenter', dokidoki);
+    
+    //6
+       const RANDOM_X = Math.round(Math.random() * (window.innerWidth - CONTAINER.offsetWidth));
+       const RANDOM_Y = Math.round(Math.random() * (window.innerHeight - CONTAINER.offsetHeight));
+
+       CONTAINER.style.top = RANDOM_Y + 'px';
+       CONTAINER.style.left = RANDOM_X + 'px';
+       console.log(RANDOM_X, RANDOM_Y);
     }
 }

@@ -1,0 +1,14 @@
+body{
+    min-width: 500px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.btn-line{
+    display: inline;
+}
+.btn-line > button{
+    font-size: 2rem;
+    text-align: center;
+}
