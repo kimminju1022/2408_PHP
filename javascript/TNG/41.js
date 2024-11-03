@@ -192,7 +192,10 @@ function CLOCK(){
         }
         console.log(CLOCK);
 
-
+// 
+document.getElementById('record').addEventListener('click', function() {
+    const currentTime = CLOCK(); // 현재 시간 가져오기
+    const timeLogDiv = document.getElementById('record_board');
     })
-})();
-
+})()
+});
