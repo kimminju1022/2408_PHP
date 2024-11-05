@@ -25,18 +25,18 @@
     </header>
 
     <main class="d-flex justify-content-center algin-items-center h-75">
-        <form style="width: 300px" action="./free.html">
-            <div id="error-Msg" class="form-text text-danger">※ 아이디를 확인하여 입력하세요 ※</div>
+        <form style="width: 300px" action="/login" method="POST">
+            <?php require_once('View/inc/errorMsg.php');?>
             <div class="mb-3">
-                <label for="id" class="form-label">아이디</label>
-                <input type="email" class="form-control" id="id" name="id">
+                <label for="u_email" class="form-label">이메일</label>
+                <input type="email" class="form-control" id="u_email" name="u_email">
 
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">비밀번호</label>
-                <input type="password" class="form-control" id="password" name="pw">
+                <label for="u_pw" class="form-label">비밀번호</label>
+                <input type="password" class="form-control" id="u_pw" name="u_pw">
             </div>
-            <button type="button" class="btn btn-dark w-100 mb-3">로그인</button>
+            <button type="submit" class="btn btn-dark w-100 mb-3">로그인</button>
             <a href="./regist.html" class="btn btn-secondary w-100">회원가입</a>
         </form>
 
