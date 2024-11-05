@@ -190,9 +190,7 @@ function CLOCK(){
         function addRecord(){
             let add
         }
-        console.log(CLOCK);
-
-
+        document.write(CLOCK());
     })
 })();
 
