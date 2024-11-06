@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Models\BoardsCategory;
+use Lib\Auth;
 
 class Controller
 {
@@ -18,7 +19,7 @@ class Controller
         }
 
         //유저 로그인 및 권한체크
-
+        Auth::chkAuthorization();
 
         //헤더 드롭다운 리스트 획득
         $boardsCategoryModel = new BoardsCategory();

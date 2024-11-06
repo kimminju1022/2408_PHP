@@ -18,15 +18,15 @@ class UserValidator{
         }
 
         //패스워드 체크
-        if(array_key_exists('u_pw',$data)){
-            if(preg_match($patternPassword, $data['u_pw'],$matches)===0){
+        if(array_key_exists('u_password',$data)){
+            if(preg_match($patternPassword, $data['u_password'],$matches)===0){
                 $arrErrorMsg[] = '비밀번호는 영어 대소문자 및 숫자, 특수 문자(!,@) 8~20자로 작성해 주세요';
             }
         }
 
         //패스워드 확인 체크
-        if(array_key_exists('u_pw_chk',$data)){
-            if($data['u_pw'] !== $data['u_pw_chk']){
+        if(array_key_exists('u_password_chk',$data)){
+            if($data['u_password'] !== $data['u_password_chk']){
                 $arrErrorMsg[] = '입력한 비밀번호가 일치하지 않습니다';
             }
         }
