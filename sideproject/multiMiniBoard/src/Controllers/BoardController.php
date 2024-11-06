@@ -96,7 +96,7 @@ class BoardController extends Controller
         $filePath = _PATH_IMG.'/'.$fileName;  // /view/img/---.
         move_uploaded_file($file['tmp_name'],_ROOT.$filePath); //파일복사
 
-        return $fileName;
+        return $filePath;
     }
 }
 
