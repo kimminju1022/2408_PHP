@@ -22,7 +22,7 @@
                 })
         });
     });
-    document.querySelector('#btnInsert').addEventListener('click',()=>{
+    document.querySelector('#btnInsert').addEventListener('click', () => {
         window.location = '/boards/insert';
     });
 })();

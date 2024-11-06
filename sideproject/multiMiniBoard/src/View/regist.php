@@ -11,8 +11,8 @@
 </head>
 
 <body class="vh-100">
-    <?php require_once('View/inc/header.php');?>
-    
+    <?php require_once('View/inc/header.php'); ?>
+
     <main class="d-flex justify-content-center algin-items-center h-75">
         <form style="width: 300px" action="./regist" method="POST">
             <?php require_once('View/inc/errorMsg.php') ?>
@@ -34,7 +34,7 @@
 
             <div class="mb-3">
                 <label for="u_name" class="form-label">이름</label>
-                <input type="text" class="form-control" id="u_name" name="u_name" value="<?php echo $this->userInfo['u_name']?>">
+                <input type="text" class="form-control" id="u_name" name="u_name" value="<?php echo $this->userInfo['u_name'] ?>">
             </div>
             <button type="submit" class="btn btn-dark">가입하기</button>
             <a href="./login" class="btn btn-primary">취소하기</a>

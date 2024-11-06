@@ -29,16 +29,16 @@ class BoardsCategory extends Model
         try {
             $sql =
                 ' SELECT '
-                .' bc_name '
-                .' ,bc_type '
-                .' FROM '
-                .' boards_category '
-                .' ORDER BY '
-                .' bc_type ASC ';
+                . ' bc_name '
+                . ' ,bc_type '
+                . ' FROM '
+                . ' boards_category '
+                . ' ORDER BY '
+                . ' bc_type ASC ';
             $stmt = $this->conn->query($sql);
             return $stmt->fetchAll();
         } catch (Throwable $th) {
-            echo 'BoardsCategory->getBoardNameList(), '. $th->getMessage();
+            echo 'BoardsCategory->getBoardNameList(), ' . $th->getMessage();
             exit;
         }
     }

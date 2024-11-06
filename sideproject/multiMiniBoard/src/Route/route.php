@@ -47,7 +47,7 @@ class Route
         } else if ($url === 'boards/insert') {
             if ($httpMethod === 'GET') {
                 new BoardController('create');
-            } else if($httpMethod === 'post'){
+            } else if ($httpMethod === 'post') {
                 new BoardController('store');
             }
         }

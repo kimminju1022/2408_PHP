@@ -54,9 +54,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="text-align: center;">
-                <p id ="modalUserName"></p>    
-                <p id = "modalContent"></p>
-                <img src ="" id="modalImg" style="width:200px; height: 200px;" class="card-img-top" alt="">
+                    <p id="modalUserName"></p>
+                    <p id="modalContent"></p>
+                    <img src="" id="modalImg" style="width:200px; height: 200px;" class="card-img-top" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

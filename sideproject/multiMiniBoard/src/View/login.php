@@ -15,7 +15,7 @@
 
     <main class="d-flex justify-content-center algin-items-center h-75">
         <form style="width: 300px" action="/login" method="POST">
-            <?php require_once('View/inc/errorMsg.php');?>
+            <?php require_once('View/inc/errorMsg.php'); ?>
             <div class="mb-3">
                 <label for="u_email" class="form-label">이메일</label>
                 <input type="email" class="form-control" id="u_email" name="u_email">
