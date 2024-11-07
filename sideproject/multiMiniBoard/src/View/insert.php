@@ -27,12 +27,15 @@
             </div>
             <div class="mb-3">
                 <label for="file" class="form-label">이미지</label>
-                <input type="file" name="file" requireㅇ>
+                <input type="file" name="file" required>
                 <!-- require는 필수데이터!!!! -->
             </div>
 
             <button type="submit" class="btn btn-dark w-100 mb-3">작성</button>
             <a href="/regist" class="btn btn-secondary w-100">취소</a>
+
+            <input type="hidden" name="bc_type" value="<?php echo $this->boardType?>" > 
+            <!-- hidden폼태그 안에 있어야 전송된다 기억해!!! -->
         </form>
 
     </main>

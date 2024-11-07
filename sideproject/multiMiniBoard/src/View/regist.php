@@ -19,9 +19,9 @@
 
             <div class="mb-3">
                 <label for="u_email" class="form-label">아이디</label>
-                <input type="email" class="form-control" id="u_email" name="u_email">
-
+                <input type="email" class="form-control" id="u_email" name="u_email" values="<?php echo $this->userInfo['u_email'] ?>">
             </div>
+            
             <div class="mb-3">
                 <label for="u_password" class="form-label">비밀번호</label>
                 <input type="password" class="form-control" id="u_password" name="u_password">

@@ -13,13 +13,11 @@ class UserController extends Controller
         'u_name' => ''
     ];
 
-    protected function goLogin()
-    {
+    protected function goLogin(){
         return 'login.php';
     }
 
-    protected function login()
-    {
+    protected function login(){
         //유저 입력 정보를 획득
         $requestData = [
             'u_email' => $_POST['u_email'],
@@ -56,14 +54,16 @@ class UserController extends Controller
             $this->arrErrorMsg[] = '패스워드가 일치하지 않습니다';
             return 'login.php';
         }
+
         //세션에 u_id저장
+        $_SESSION['u_id'] = $resultUserInfo['u_id'];        
         $_SESSION['u_email'] = $resultUserInfo['u_email'];
 
         //로케이션 처리
         return 'Location: /boards';
     }
-    public function logout()
-    {
+    public function logout(){
+        unset($_SESSION['u_id']); //유저 아이디 제거
         unset($_SESSION['u_email']); //유저 이메일 제거
         session_destroy(); //세션 파괴
 
@@ -71,14 +71,12 @@ class UserController extends Controller
         return 'Location: /login';
     }
 
-    public function goRegist()
-    {
+    public function goRegist(){
         return 'regist.php';
     }
 
     // 회원가입 처리
-    public function regist()
-    {
+    public function regist(){
         $requestData = [
             'u_email' => isset($_POST['u_email']) ? $_POST['u_email'] : '',
             'u_password' => isset($_POST['u_password']) ? $_POST['u_password'] : '',

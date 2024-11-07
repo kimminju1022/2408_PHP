@@ -7,36 +7,30 @@ use Models\Board;
 use Models\BoardsCategory;
 
 
-class BoardController extends Controller
-{
+class BoardController extends Controller{
     private $arrBoardList = [];   // 게시글 정보 리스트
     private $boardName = ''; //게시판이름
-    protected $boardType; //게시판 코드
+    protected $boardType=''; //게시판 코드
 
 
     //getter
-    public function getArrBoardList()
-    {
+    public function getArrBoardList(){
         return $this->arrBoardList;
     }
-    public function getBoardName()
-    {
+    public function getBoardName(){
         return $this->boardName;
     }
 
     //setter
-    public function setArrBoardList($arrBoardList)
-    {
+    public function setArrBoardList($arrBoardList){
         $this->arrBoardList = $arrBoardList;
     }
 
-    public function setBoardName($boardName)
-    {
+    public function setBoardName($boardName){
         $this->boardName = $boardName;
     }
 
-    public function index()
-    {
+    public function index(){
         //보드 타입 획득
         $requestData = [
             'bc_type'  => isset($_GET['bc_type']) ? $_GET['bc_type'] : '0'
@@ -61,8 +55,7 @@ class BoardController extends Controller
         return 'board.php';
     }
     // 상세
-    public function show()
-    {
+    public function show(){
         $requestData = [
             'b_id' => $_GET['b_id']
         ];
@@ -79,23 +72,39 @@ class BoardController extends Controller
         exit;
     }
     // 작성 페이지 이동
-    public function create()
-    {
+    public function create(){
+        $this->boardType = $_GET['bc_type'];
         return 'insert.php';
     }
 
     // 작성처리
-    public function store()
-    {
+    public function store(){
         $requestData = [
-            'b_title' => $_POST['b_titlte'],
-            'b_content' => $_POST['b_content'],
-            'b_img' => ''
+            'b_title' => $_POST['b_title']
+            ,'b_content' => $_POST['b_content']
+            ,'b_img' => ''
+            ,'bc_type'=> $_POST['bc_type']
+            ,'u_id' => $_SESSION['u_id']
         ];
         $requestData['b_img'] = $this->saveImg($_FILES['file']);
+        
+        $boardModel = new Board();
+
+        //보드인서트처리
+        $boardModel->beginTransaction();
+        $resultBoardInsert = $boardModel->insertBoard($requestData);
+        if($resultBoardInsert !==1){
+            $boardModel->rollBack();
+            $this->arrErrorMsg[] = '게시글 작성 실패';
+            $this->boardType = $requestData['bc_type'];
+            return 'insert.php';
+        }
+        $boardModel->commit();
+
+        return 'Location: /boards?bc_type='.$requestData['bc_type'];
     }
-    private function saveImg($file)
-    {
+
+    private function saveImg($file){
         // 파일명을 임의로 만들어 중복현상을 방지하는 방법
         $type = explode('/', $file['type']);  //['image'.'확장자']
         $fileName = uniqid() . '.' . $type[1]; //' ---.확장자'
