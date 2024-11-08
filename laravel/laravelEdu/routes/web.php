@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\QueryController;
+use App\Http\Controllers\Taskcontroller;
+use App\Http\Controllers\TestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -153,3 +156,53 @@ Route::prefix('/users')->group(function(){
 //         return 'GET : /users';
 //     });
 // });
+
+/** 컨트롤러 연결
+ * 커멘드로 컨트롤러 연결 
+ * 커맨드로 컨트롤러 생성 : php artisan make:controller컨트롤러 명*/
+Route::get('/test',[TestController::class,'index']);
+
+// Route::get('/task',[Taskcontroller::class,'index']);
+// Route::get('/task/create',[TaskController::class,'create']);
+// Route::post('/task',[TaskController::class,'store']);
+// Route::get('/task/{id}',[TaskController::class,'show']);
+// Route::get('/task/edit/{id}',[TaskController::class,'edit']);
+// Route::put('/task/{id}',[TaskController::class,'upsate']);
+// Route::delete('/task/{id}',[TaskController::class,'destroy']);
+//적기
+
+// only([]) : 사용할 액션 지정
+// Route::resource('/task', Taskcontroller::class)->only(['index','create']);
+//적기
+// except([]) : 사용하지 않을 액션 지정
+Route::resource('/task', Taskcontroller::class)->except(['index','create']);
+//적기
+
+// 블레이드 템플릿용
+Route::get('/edu',function(){
+    return view ('edu')
+            // ->with('data',['name'=>'홍길동','id'=>54]); 밑에거 안됨 왜 안됨?????
+            ->with('data',['name'=>'홍길동','content'=>"<script>alert('tt')</script>"]);
+});
+// 인클루드 문법 ->board.blade
+Route::get('/boards',function(){
+    return view('board');
+});
+
+// 상속 (layout->extend)
+// Route::get('/extends',function(){
+//     return view('extends');
+// });
+Route::get('/extends',function(){
+    $result = [
+        ['id'=>1, 'name'=>'홍길동1','gender'=>'c']
+        ,['id'=>2, 'name'=>'홍길동2','gender'=>'f']
+        ,['id'=>3, 'name'=>'홍길동3','gender'=>'m']
+    ];
+    return view('extends')
+            ->with('data',$result)
+            ->with('data2',[]);    //추가 [데이터 없음이거나 이름] 
+});
+
+// 쿼리빌더(빌더 클래스를 활용한 방법) 연습용 -이전에 사용한 미니멀티보드 sql사용
+Route::get('/query',[QueryController::class,'index']);
