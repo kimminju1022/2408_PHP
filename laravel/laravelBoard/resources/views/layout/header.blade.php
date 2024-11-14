@@ -27,7 +27,7 @@
             @endauth
 
             @guest
-                <a href="" class="navbar-nav nav-link text-light" role="button">회원가입</a>
+                <a href="{{route('get.Member')}}" class="navbar-nav nav-link text-light" role="button">회원가입</a>
             @endguest
         </div>
     </nav>

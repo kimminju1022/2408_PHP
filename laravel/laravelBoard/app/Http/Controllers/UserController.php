@@ -6,10 +6,13 @@ use App\Models\User;
 use Database\Factories\UserFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Models\User as ModelsUser;
+use Throwable;
 
 class UserController extends Controller
 {
@@ -77,4 +80,50 @@ class UserController extends Controller
         Session::regenerateToken();
         return redirect()->route('goLogin');
     }
+    // ----------------------------
+    // 회원가입화면 이동
+    public function member(){
+        return view('member');
+    }
+    public function storeMember(Request $request){
+        // 유효성 체크 - validation을 사용하기 위해 설정을 해야한다 request에 담는 속성을 다 적어줘야 검사해주니 유의해라
+        $validator = Validator::make(
+            $request->only('u_email','u_password','u_password_chk','u_name'),
+            [
+                'u_email' => ['required', 'email', 'unique:users,u_email']
+                ,'u_password' => ['required', 'between:9,20', 'regex:/^[a-zA-Z0-9!@]+$/']
+                ,'u_password_chk' => ['same:u_password']
+                ,'u_name'=>['required', 'between:2,50','regex:/^[가-힣a-zA-Z]+$/u']
+            ]
+        );
+        // 유효성 실패 시 if를 실행
+        if ($validator->fails()) {
+            return redirect()
+                ->route('get.Member')
+                ->withErrors($validator->errors());
+        }
+
+
+        // 회원정보삽입
+        // $user = new User();
+        // $user->u_email = $request->u_email;
+        // $user->u_password = Hash::make($request->u_password);
+        // $user->u_name=$request->u_name;
+        // $user->save();
+        
+        try{
+            DB::beginTransaction();
+                User::create([
+                    'u_email' => $request->u_email
+                    ,'u_name' => $request->u_name
+                    ,'u_password' => Hash::make($request->u_password)
+                ]);
+                DB::commit();
+            } catch(Throwable $th) {
+                DB::rollBack(); //라라벨은 롤백을 자동으로 처리해줌
+            }
+            //회원가입 처리
+            return redirect()->route('goLogin');
+        }
+
 }

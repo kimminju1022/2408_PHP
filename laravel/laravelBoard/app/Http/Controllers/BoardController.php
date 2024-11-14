@@ -36,6 +36,7 @@ class BoardController extends Controller
     //작성페이지로 이동하는 것이다
     {
         //
+        return view('createBoard');
     }
 
     /**
@@ -48,7 +49,7 @@ class BoardController extends Controller
 // 작성완료페이지
      public function store(Request $request)
     {
-        //
+        $insert
     }
 
     /**

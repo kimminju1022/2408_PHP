@@ -9,6 +9,7 @@
     {{-- 자식요소의 정보를 불러옴 --}}
     @yield('cssLink')
     @yield('jsLink')
+    
         {{-- <link rel="stylesheet" href="../bootstrap/css/myCommon.css"> --}}
 
     <title>@yield('title','멀티')</title>
