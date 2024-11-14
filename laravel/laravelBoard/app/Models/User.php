@@ -12,7 +12,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable, SoftDeletes;
 
     // pk설정
-    protected $primarykey = 'u_id';
+    protected $primaryKey = 'u_id';
 
     /**
      * The attributes that are mass assignable.

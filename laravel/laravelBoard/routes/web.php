@@ -25,4 +25,5 @@ Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 
 //게시판관련
-Route::resource('/boards',BoardController::class)->except(['update','edit']);
+Route::middleware('auth')->resource('/boards',BoardController::class)->except(['update','edit']);
+// Route::resource('/boards',BoardController::class)->except(['update','edit']);

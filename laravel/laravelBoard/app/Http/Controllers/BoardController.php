@@ -58,7 +58,7 @@ class BoardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    // 상세페이지로 게시글로 이동한다
+    // 상세페이지 게시글로 이동한다
     {
         //작성된 값이 기록되게 한다 현재는 id값이 debug되게 해두었다 원래 사용 목적은 에러의 기록을 남기는 용이다
         // 디버그는 에러보다 낮은 레벨로 로그레벨을 사용하면 11:44분 내용 다시 듣고 작성!!!

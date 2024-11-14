@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -62,7 +63,8 @@ class UserController extends Controller
         // var_dump(Auth::id()); //로그인한 유저의 pk회득
         // var_dump(Auth::user());//로그인한 유저의 정보회득
         // var_dump(Auth::check());//유저의 로그인 여부 체크
-
+        // Log::debug('ttt', $userInfo->toArray());
+        // Log::debug('ttt', [Auth::check()]);
         // 리다이렉트 처리
         return redirect()->route('boards.index');    
     }
@@ -72,7 +74,7 @@ class UserController extends Controller
 
         Session::invalidate(); //로그아웃 후 세션 아이디를 지우는 즉 초기화 하는 작업이며 새로운 session id발급
         // csrf 토큰은 사용되어 왔는데 이건 1회성이지만 로그인 후 삭제되어야 한다 그래서 새로운 세션 id를 생성한 후 로그인으로 이동
-        Session::regeneateToken();
+        Session::regenerateToken();
         return redirect()->route('goLogin');
     }
 }
