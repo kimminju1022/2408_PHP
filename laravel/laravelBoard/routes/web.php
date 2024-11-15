@@ -19,13 +19,14 @@ Route::get('/', function () {
     // return view('welcome');
     return redirect()->route('goLogin');
 });
-Route::get('/login',[UserController::class,'goLogin'])->name('goLogin');
-Route::post('/login',[UserController::class,'login'])->name('login');
+// 로그인
+Route::middleware('guest')->get('/login',[UserController::class,'goLogin'])->name('goLogin');
+Route::middleware('guest')->post('/login',[UserController::class,'login'])->name('login');
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 // 회원가입 관련 prof->member = registation
-Route::get('/member',[UserController::class,'member'])->name('get.Member');
-Route::post('/member',[UserController::class,'storeMember'])->name('post.member');
+Route::middleware('guest')->get('/member',[UserController::class,'member'])->name('get.Member');
+Route::middleware('guest')->post('/member',[UserController::class,'storeMember'])->name('post.member');
 
 //게시판관련
 Route::middleware('auth')->resource('/boards',BoardController::class)->except(['update','edit']);

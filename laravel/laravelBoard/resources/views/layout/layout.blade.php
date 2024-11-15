@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <title>@yield('title','멀티')</title>
     {{-- 자식요소의 정보를 불러옴 --}}
     @yield('cssLink')
+    {{-- <link rel="stylesheet" href="../bootstrap/css/myCommon.css"> --}}
     @yield('jsLink')
     
-        {{-- <link rel="stylesheet" href="../bootstrap/css/myCommon.css"> --}}
 
-    <title>@yield('title','멀티')</title>
 </head>
 <body class="@yield('bodyClassVh')">
     @include('layout.header')
