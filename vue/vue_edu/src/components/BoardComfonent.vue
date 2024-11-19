@@ -1,8 +1,8 @@
 <template>
-    <div class="gameBox">
+    <!-- <div class="gameBox">
         <div @mouseover="Text" class="randomBox" style="visibility: hidden;">pikaboo</div>
 
-    </div>
+    </div> -->
     <!-- <h1>{{ cnt }}</h1>
     <button @click="addCnt">add</button>
     <button @click="disCnt">dis</button> -->

@@ -1,8 +1,25 @@
 <template>
+<!-- componentEvent -->
+ <p>부모쪽cnt : {{ cnt }}</p>
+ <!-- <button @click="addCnt">부모쪽 버튼</button> 자식에서 이벤트를 만들었기 때문에 주석 처리함-->
 
+<EventComponent
+  :cnt = "cnt"
+  @eventAddCnt = "addCnt"
+  @eventAddCntParam = "addCntParam"
+  @eventReset = "numReset"
+/> 
+
+<!-- 자식 컴포넌트 호출 _ childComponent.vue관련-->
+ <childComponent 
+   :data = "data"
+   :count = "cnt"
+ >
+  <h3>부모쪽에서 작성한 내용으로 자식쪽으로 <br> 보내고 싶은 내용이 랜더링되게 하는 <br> 단순표시 방법</h3>
+  <p>아아아아아아아빵</p>
+</childComponent>
 <!-- 자식 컴포넌트 호출 _ Board.vue관련-->
  <BoardComfonent />
-
 
  <hr>
 
@@ -55,8 +72,10 @@
 
 
 <script setup>
+import childComponent from './components/childComponent.vue';
 import BoardComfonent from './components/BoardComfonent.vue';
 import { reactive, ref } from 'vue';
+import EventComponent from './components/EventComponent.vue';
 
 const data = reactive([
   {name:'홍길동', age: 20, gender: '남자' }
@@ -108,6 +127,14 @@ function addCnt(){
 function disCnt(){
 // const disCnt = () => {
   cnt.value--;
+}
+
+function addCntParam(num){
+  cnt.value += num;
+}
+
+function numReset(){
+  cnt.value=0;
 }
 </script>
 
