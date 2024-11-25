@@ -6,10 +6,15 @@
                 <div class="title">
                     <a href=""><h1>VueStagram</h1></a>
                 </div>
-                <img src="/welcome.png" class="img-logo">
+                <img src="img/logo.png" class="img-logo">
                 <div class="btn-group">
-                    <router-link to="/login"><button class="btn btn-header btn-bg-black">login</button></router-link>
-                    <router-link to="/registration"><button class="btn btn-header btn-bg-white">members</button></router-link>
+                    <div v-if="!$store.state.user.authFlg">
+                        <router-link to="/login"><button class="btn btn-header btn-bg-black">login</button></router-link>
+                        <router-link to="/registration"><button class="btn btn-header btn-bg-white">members</button></router-link>
+                    </div>
+                    <div v-else>
+                        <button @click="$store.dispatch('user/logout')" class="btn btn-header btn-bg-black">logout</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -17,7 +22,8 @@
     </header>
     <!-- main -->
      <main>
-        <UserInfoComponent></UserInfoComponent>
+        <!-- <UserInfoComponent v-if="$store.state.user.accessToken"></UserInfoComponent> -->
+        <UserInfoComponent v-if="$store.state.user.authFlg"></UserInfoComponent>
 
         <div class="container">
             <router-view></router-view>
@@ -33,6 +39,8 @@
 <script setup>
 import router from '../../js/router';
 import UserInfoComponent from './user/UserInfoComponent.vue';
+
+
 </script>
 <style>
     @import url('../../css/common.css');

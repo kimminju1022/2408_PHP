@@ -3,6 +3,8 @@ namespace App\Utils;
 
 use MyEncrypt;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use PDOException;
 
 class MyToken {
     /**access Token, refresh Token생성
@@ -10,12 +12,37 @@ class MyToken {
      * @param App\Models\User
      * @return Array[$accessToken, $refreshToken]
      */
-    public function createTokens(User $user){
+    
+     // public--------------------------
+     public function createTokens(User $user){
         $accessToken = $this->createToken($user,env('TOKEN_EXP_ACCESS'));
         $refreshToken = $this->createToken($user, env('TOKEN_EXP_REFRESH'), false);
 
         return[$accessToken, $refreshToken];
     }
+
+    // private--------------------------
+    /**리프래쉬 토큰 업데이트 
+     * @param App\Model\User $userInfo 유저 정보
+     * @param string $refreshToken
+     * 
+     * @return bool true  */
+    
+    public function updateRefreshToken(User $userInfo, string $refreshToken){
+        // 
+        $userInfo->refresh_token = $refreshToken;
+        // throw new PDOException(('E80'));
+        DB::beginTransaction();
+        if(!($userInfo->save())){
+            DB::rollBack();
+            throw new PDOException('Error updateRefreshToken()');
+
+        }
+        DB::commit();
+
+        return true;
+    }
+
 
     /**JWT 생성
      * 
