@@ -21,8 +21,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('MyToken',function(){
             return new MyToken();
         });
+        $this->app->bind('MyAuthException',function(){
+            return new MyToken();
+        });
     }
 
+    
     /**
      * Bootstrap any application services.
      *

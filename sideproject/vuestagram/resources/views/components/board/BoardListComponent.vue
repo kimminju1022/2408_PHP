@@ -1,20 +1,8 @@
 <template >
 <!-- list -->
     <div class="board-list-box">
-        <div @click="openModal" class="item">
-            <img src="/img/참잘했어요.gif">
-        </div>
-        <div @click="openModal" class="item">
-            <img src="/img/라스무스.jpg">
-        </div>
-        <div @click="openModal" class="item">
-            <img src="/img/미안.gif">
-        </div>
-        <div @click="openModal" class="item">
-            <img src="/img/lala.gif">
-        </div>
-        <div @click="openModal" class="item">
-            <img src="/img/티끌.png">
+        <div v-for="item in boardList" :key="item" @click="openModal" class="item">
+            <img :src="item.img">
         </div>
     </div>
     <!-- 상세모달 -->
@@ -33,7 +21,26 @@
 </template>
 <script setup>
 
-import { ref } from 'vue';
+import { computed,onBeforeMount, ref } from 'vue';
+import { useStore } from 'vuex';
+// boards의 정보를 가져와 쓰는 방법
+const store = useStore();
+
+function test(){
+    
+}
+
+// 보드리스트
+const boardList = computed(() => store.state.board.boardList);
+
+// before Mount처리
+onBeforeMount(() => {
+    if(store.state.board.boardList.length < 1){
+        store.dispatch('board/getBoardListPagenation');
+
+    }
+});
+
 // modal관련
 const modalFlg = ref(false);
 const openModal = ()=>{

@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Utils\MyToken as UtilsMyToken;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use MyToken;
 
@@ -40,4 +41,28 @@ class AuthController extends Controller
 
         return response()->json($responseData,200);
     }
+
+    /**로그아웃
+     * @param Illuminate\Http\request $request
+     * 
+     * @return response JSON */
+
+     public function logout(Request $request){
+        // return $request->bearerToken();
+        $id = MyToken::getValueInPayload($request->bearerToken(), 'idt');
+
+        // 유저 정보 획득
+        $userInfo = User::find($id);
+
+        // 리프레쉬 토큰 갱신
+        MyToken::updateRefreshToken($userInfo, null);
+        $responseData = [
+            'success'=> true
+            ,'msg' => '로그아웃 성공'       
+        ];
+
+        return response()->json($responseData, 200);
+     }
+
+
 }

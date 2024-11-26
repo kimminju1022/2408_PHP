@@ -2,11 +2,13 @@
 
 namespace App\Exceptions;
 
+use App\Exceptions\MyAuthException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Support\Facades\Log;
 use PDOException;
 use Throwable;
+// use MyAuthException;
 
 class Handler extends ExceptionHandler
 {
@@ -74,8 +76,13 @@ class Handler extends ExceptionHandler
         }
         $errInfo = $this->context()[$code];
 
+        // 커스텀 exception인스턴스 확인
+        if($th instanceof MyAuthException){
+            $code = $th->getMessage();
+            $errInfo = $th->context()[$code];
+        }
         // fhrmwkrtjd
-        Log::info($code.' : '.$errInfo['msg']);
+        // Log::info($code.' : '.$errInfo['msg']);
 
         // response Data 생성
         $responseData = [
