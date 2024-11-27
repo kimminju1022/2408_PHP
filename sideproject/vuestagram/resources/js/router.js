@@ -44,7 +44,7 @@ const routes = [
         beforeEnter: chkAuth,
     },
     {
-        path: '/boardscreate',
+        path: '/boards/create',
         component: BoardCreateComponent,
         beforeEnter: chkAuth,
     },

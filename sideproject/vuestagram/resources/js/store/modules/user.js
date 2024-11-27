@@ -18,6 +18,11 @@ export default {
         setUserInfo(state, userInfo){
             state.userInfo = userInfo;
         },
+        setUserInfoBoardsCount(state){
+            state.userInfo.boards_count++;
+            localStorage.setItem('userInfo',JSON.stringify(state.userInfo));
+        },
+
     },
     actions:{
         /**인증관련
@@ -45,7 +50,7 @@ export default {
                 context.commit('setUserInfo',response.data.data);
                 
                 // 보드 리스트로 이동_로그인하고 나서 로그인 말고 보드로 가도록 경로설정
-                router.replace('/board');
+                router.replace('/boards');
             }) //정상
 
             .catch(error =>{

@@ -22,8 +22,9 @@ Route::post('/login',[AuthController::class, 'login'])->name('post.login');
 // 인증이 필요한 라우트 그룹
 Route::middleware('my.auth')->group(function(){
     // 인증관련
-    Route::post('/logout',[AuthController::class, 'logout'])->name('post.logout');
+    Route::post('/logout',[AuthController::class, 'logout'])->name('auth.logout');
     // 게시글 관련
-    Route::get('/boards',[BoardController::class, 'index'])->name('post.index');
-
+    Route::get('/boards',[BoardController::class, 'index'])->name('boards.index');
+    Route::get('/boards/{id}',[BoardController::class, 'show'])->name('boards.show');
+    Route::post('/boards',[BoardController::class, 'store'])->name('boards.store');
 });

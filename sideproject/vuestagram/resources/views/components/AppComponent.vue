@@ -6,7 +6,7 @@
                 <div class="title">
                     <a href=""><h1>VueStagram</h1></a>
                 </div>
-                <img src="img/logo.png" class="img-logo">
+                <img src="../../../public/img/logo.png" class="img-logo">
                 <div class="btn-group">
                     <div v-if="!$store.state.user.authFlg">
                         <router-link to="/login"><button class="btn btn-header btn-bg-black">login</button></router-link>
