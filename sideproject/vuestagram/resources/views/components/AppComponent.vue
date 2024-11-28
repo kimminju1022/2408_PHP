@@ -22,6 +22,8 @@
     </header>
     <!-- main -->
      <main>
+        <!-- 버튼나중에 제거하기 -->
+         <!-- <button @click="$store.dispatch('user/chkTokenAndContinueProcess',()=>{console.log('테스트')})">토큰만료확인</button> -->
         <!-- <UserInfoComponent v-if="$store.state.user.accessToken"></UserInfoComponent> -->
         <UserInfoComponent v-if="$store.state.user.authFlg"></UserInfoComponent>
 

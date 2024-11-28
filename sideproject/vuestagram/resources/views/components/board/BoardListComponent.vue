@@ -55,7 +55,7 @@ const boardScrollEvent = () => {
             // store.dispatch('board/addBoardList');
             // store.commit('board/setControllFlg', true);
             // 여기 내용수정해야함
-            console.log('스크롤');
+            // console.log('스크롤');
         }
        
     }

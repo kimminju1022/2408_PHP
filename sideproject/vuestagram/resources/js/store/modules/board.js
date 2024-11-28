@@ -28,7 +28,7 @@ export default {
         setControllFlg(state, flg) {
             state.controllFlg = flg;
         },
-        setLastPageFlg(state,flg) {
+        setLastPageFlg(state, flg) {
             state.lastPageFlg = flg;
         },
     },
@@ -38,93 +38,107 @@ export default {
         * get getter  / bpardlist pagination
         *      */
         boardListPagenation(context) {
-            //디바운싱 처리 시작
-            if (context.state.controllFlg && !context.state.lastPageFlg) {
-                context.commit('setControllFlg', false);
-                // const url = '/api/boards?page='+ context.state.page;
-                const url = '/api/boards?page=' + context.getters['getNextPage'];
-                const config = {
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+            context.dispatch('user/chkTokenAndContinueProcess'
+                , () => {
+                    //디바운싱 처리 시작
+                    if (context.state.controllFlg && !context.state.lastPageFlg) {
+                        context.commit('setControllFlg', false);
+                        // const url = '/api/boards?page='+ context.state.page;
+                        const url = '/api/boards?page=' + context.getters['getNextPage'];
+                        const config = {
+                            headers: {
+                                'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+                            }
+                        }
+                        axios.get(url, config)
+                            .then(response => {
+                                // console.log('보드리스트획득', response.data.boardList);
+                                context.commit('setBoardList', response.data.boardList.data);
+                                context.commit('setPage', response.data.boardList.current_page);
+                                // 더 이상 불러올 데이터 없을 시,  불필요한 요청 안보내기 위한 처리
+                                if (response.data.boardList.current_page >= response.data.boardList.last_page) {
+                                    // 마지막 페이지일 경우 플래그 true
+                                    context.commit('setLastPageFlg', true);
+                                }
+                            })
+                            .catch(error => {
+                                console.log(error);
+                            })
+                            .finally(() => {
+                                context.commit('setControllFlg', true);
+                            });
                     }
                 }
-                axios.get(url, config)
-                    .then(response => {
-                        console.log('보드리스트획득', response.data.boardList);
-                        context.commit('setBoardList', response.data.boardList.data);
-                        context.commit('setPage', response.data.boardList.current_page);
-                        // 더 이상 불러올 데이터 없을 시,  불필요한 요청 안보내기 위한 처리
-                        if(response.data.boardList.current_page >= response.data.boardList.last_page){
-                            // 마지막 페이지일 경우 플래그 true
-                            context.commit('setLastPageFlg',true);
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    })
-                    .finally(() => {
-                        context.commit('setControllFlg', true);
-                    });
-            }
+                , { root: true });
 
         },
         /**게시글 상세 정보 획득
          * @param {*}    context
          * @param {int} id       */
         showBoard(context, id) {
-            const url = '/api/boards/' + id;
-            const config = {
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
-                }
-            }
-            axios.get(url, config)
-                .then(response => {
-                    context.commit('setBoardDetail', response.data.board);
-                    // context.commit('setPage', response.data.boardList.current_page);
+            // 다른 모듈에 있는 액션 매서드를 불러오기
+            context.dispatch('user/chkTokenAndContinueProcess'
+                , () => {
+                    // 실행할 함수처리 방법
+                    const url = '/api/boards/' + id;
+                    const config = {
+                        headers: {
+                            'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+                        }
+                    }
+                    axios.get(url, config)
+                        .then(response => {
+                            context.commit('board/setBoardDetail', response.data.board, { root: true });
+                            // context.commit('setPage', response.data.boardList.current_page);
 
-                })
-                .catch(error => {
-                    console.error(error);
-                })
-                
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+                }
+                , { root: true });
+
+
         },
         /**게시글 작성
          * 
          */
         storeBoard(context, data) {
+            context.dispatch('user/chkTokenAndContinueProcess'
+                , () => {
+                    if (context.state.controllFlg) {
+                        context.commit('setControllFlg', false)
+                        const url = '/api/boards';
+                        const config = {
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                                'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+                            }
+                        };
+                        const formData = new FormData();
+                        formData.append('content', data.content);
+                        formData.append('file', data.file);
 
-            if (context.state.controllFlg) {
-                context.commit('setControllFlg', false);
+                        axios.post(url, formData, config)
+                            .then(response => {
+                                context.commit('setBoardListUnshift', response.data.board);
+                                context.commit('user/setUserInfoBoardsCount', null, { root: true });
 
-                const url = '/api/boards';
-                const config = {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+
+                                router.replace('/boards');
+                            })
+                            .catch(error => {
+                                console.error(error);
+                            })
+                            .finally(() => {
+                                context.commit('setControllFlg', true);
+                            });
                     }
-                };
-                const formData = new FormData();
-                formData.append('content', data.content);
-                formData.append('file', data.file);
-
-                axios.post(url, formData, config)
-                    .then(response => {
-                        context.commit('setBoardListUnshift', response.data.board);
-                        context.commit('user/setUserInfoBoardsCount', null, { root: true });
-
-
-                        router.replace('/boards');
-                    })
-                    .catch(error => {
-                        console.error(error);
-                    })
-                    .finally(() => {
-                        context.commit('setControllFlg', true);
-                    });
-            }
+                },
+                { root: true });
         },
     },
+
     getters: {
         getNextPage(state) {
             return state.page + 1;

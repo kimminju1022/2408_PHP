@@ -29,8 +29,16 @@ class UserRequest extends FormRequest
             'account' => ['required','between:5,20', 'regex:/^[0-9a-zA-Z]+$/']
             ,'password' => ['required','between:5,20', 'regex:/^[0-9a-zA-Z!@]+$/']
         ];
-        if($this->routeIs('post.login')){
-            $rules['account'][]='exists:users,account';
+        // 로그인
+        if($this->routeIs('auth.login')){
+            $rules['account'][]='exists:users,account';    
+        } else if($this->routeIs('user.store')){
+            // 회원가입
+            $rules['account'][]='unique:users,account';
+            $rules['password_chk']=['same:password'];
+            $rules['name']=['required', 'between:1,20', 'regex:/^[가-힣]+$/u'];
+            $rules['gender']=['required','regex:/^[0-1]{1}$/'];
+            $rules['profile']=['required','image'];
         }
         return $rules;
     }
