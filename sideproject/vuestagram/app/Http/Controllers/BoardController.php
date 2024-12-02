@@ -29,7 +29,7 @@ class BoardController extends Controller
                         ->find($id);
 
         $responseData = [
-            'success' => true
+            'success' => true 
             ,'msg' => '상세정보 획득 성공'
             ,'board' => $board->toArray()
         ];
